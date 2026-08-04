@@ -8,46 +8,6 @@ button,.search{border:1px solid var(--border);border-radius:14px;padding:10px 8p
 .grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px;padding:14px 12px 30px}.card{background:#fff;border:1px solid #ddd;border-radius:16px;overflow:hidden;min-width:0}.photo{aspect-ratio:1/1;padding:7px;display:flex;align-items:center;justify-content:center}.photo img{width:100%;height:100%;object-fit:contain;content-visibility:auto}.missing{color:#999;font-size:12px}.body{padding:9px}h3{font-size:13px;line-height:1.35;margin:0 0 5px}.jp,.channel{font-size:10px;color:#666;margin:0 0 6px}.tags{display:flex;gap:4px;flex-wrap:wrap;margin:6px 0}.tags span{font-size:9px;padding:3px 6px;background:#eef2ee;border-radius:999px}details{font-size:10px}
 @media(max-width:420px){.filters{grid-template-columns:repeat(3,minmax(0,1fr))}button{font-size:12px}}
 @media(min-width:780px){.grid{grid-template-columns:repeat(5,minmax(0,1fr));gap:14px;padding:14px 18px 40px}h3{font-size:15px}}
-
-@media (max-width: 640px){
-  .search{
-    font-size:16px;
-    min-height:46px;
-  }
-  button,
-  .main-filter,
-  .sub-filter,
-  .home-mode{
-    font-size:16px;
-    line-height:1.25;
-    min-height:46px;
-    padding:10px 8px;
-  }
-  .home-mode{
-    padding:10px 18px;
-  }
-  h3{
-    font-size:16px;
-    line-height:1.4;
-  }
-  .jp,
-  .channel{
-    font-size:13px;
-    line-height:1.45;
-  }
-  .tags span{
-    font-size:12px;
-    line-height:1.25;
-    padding:5px 8px;
-  }
-  details,
-  details summary,
-  details li{
-    font-size:13px;
-    line-height:1.45;
-  }
-}
-
 </style></head><body>
 <header><h1>Shopping OS</h1><p class="meta">Database First v7｜63 張主卡｜資料完整度 88.7%</p></header>
 <section class="toolbar"><div class="search-wrap"><input id="search" class="search" placeholder="搜尋商品、日文名稱、品牌或標籤"></div><nav class="filters"><button class="main-filter active" data-filter="全部">全部</button><button class="main-filter " data-filter="藥妝">藥妝</button><button class="main-filter " data-filter="無印良品">無印良品</button><button class="main-filter " data-filter="超商">超商</button><button class="main-filter " data-filter="BIC Camera">BIC Camera</button><button class="main-filter " data-filter="超市">超市</button><button class="main-filter " data-filter="伴手禮店">伴手禮店</button><button class="main-filter " data-filter="Outlet">Outlet</button><button class="main-filter " data-filter="北海道大學">北海道大學</button></nav></section>
