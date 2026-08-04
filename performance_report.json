@@ -1,0 +1,12 @@
+{
+  "version": "7.1.0",
+  "images_processed": 71,
+  "total_original_bytes": 5279164,
+  "total_thumbnail_bytes": 1506622,
+  "estimated_list_image_saving_percent": 71.5,
+  "thumbnail_max_dimension": 640,
+  "thumbnail_quality": 76,
+  "eager_first_images": 9,
+  "lazy_loading_remaining": true,
+  "async_decoding": true
+}

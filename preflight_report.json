@@ -1,0 +1,25 @@
+{
+  "passed": true,
+  "generated_at": "2026-08-04T01:56:37.456Z",
+  "summary": {
+    "products": 72,
+    "active_products": 71,
+    "photos": 71,
+    "mappings": 99,
+    "errors": 0,
+    "warnings": 9,
+    "completeness_percent": 88.7
+  },
+  "errors": [],
+  "warnings": [
+    "JP0008 Okuchi Lime 攜帶式漱口水 沒有 VERIFIED 主圖",
+    "JP0021 Bocca 焦糖布蕾 沒有 VERIFIED 主圖",
+    "JP0029 Seicomart 馬鈴薯薯條 沒有 VERIFIED 主圖",
+    "JP0030 Seicomart 哈密瓜霜淇淋 沒有 VERIFIED 主圖",
+    "JP0031 Seicomart 巧克力可頌 沒有 VERIFIED 主圖",
+    "JP0063 Itoko no Rusk 奶油脆餅 沒有 VERIFIED 主圖",
+    "JP0064 Brown Cheese Brother 焦糖乳清起司夾心餅 沒有 VERIFIED 主圖",
+    "JP0065 Baked Cake 烘焙蛋糕 沒有 VERIFIED 主圖",
+    "分類 藥妝 內 display_order 重複：100（JP0001 / JP0054）"
+  ]
+}

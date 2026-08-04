@@ -1,0 +1,81 @@
+<!doctype html><html lang="zh-Hant"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>超商｜Shopping OS</title><style>
+:root{--bg:#f4f4f0;--panel:#e8efe9;--border:#cfdbd1;--active:#315f4c;--sub:#f4e9df;--subactive:#9b5f35;--ink:#17202a}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;color:var(--ink)}
+header{padding:18px 16px 12px;background:#fff;border-bottom:1px solid #ddd}h1{margin:0 0 5px}.meta{font-size:13px;color:#777;margin:0}
+.toolbar{padding:12px;background:var(--panel);border-bottom:1px solid var(--border)}.home-mode-wrap{display:flex;gap:8px;padding:12px 12px 0;max-width:1180px;margin:auto}.home-mode{border:1px solid var(--border);border-radius:999px;padding:9px 18px;background:#fff}.home-mode.active{background:var(--active);color:#fff;font-weight:700}.filters{display:grid;grid-template-columns:repeat(auto-fit,minmax(88px,1fr));gap:8px;max-width:1180px;margin:auto}
+button,.search{border:1px solid var(--border);border-radius:14px;padding:10px 8px;background:#fff;font-size:14px;min-width:0}.active{background:var(--active);color:#fff;font-weight:700}
+.search-wrap{max-width:1180px;margin:0 auto 10px}.search{width:100%}.subpanel{display:none;padding:10px 12px;background:var(--sub);border-bottom:1px solid #e3d0bf}.subpanel.visible{display:block}.subactive{background:var(--subactive);color:#fff}
+.grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px;padding:14px 12px 30px}.card{background:#fff;border:1px solid #ddd;border-radius:16px;overflow:hidden;min-width:0}.photo{aspect-ratio:1/1;padding:7px;display:flex;align-items:center;justify-content:center}.photo img{width:100%;height:100%;object-fit:contain;content-visibility:auto}.missing{color:#999;font-size:12px}.body{padding:9px}h3{font-size:13px;line-height:1.35;margin:0 0 5px}.jp,.channel{font-size:10px;color:#666;margin:0 0 6px}.tags{display:flex;gap:4px;flex-wrap:wrap;margin:6px 0}.tags span{font-size:9px;padding:3px 6px;background:#eef2ee;border-radius:999px}details{font-size:10px}
+@media(max-width:420px){.filters{grid-template-columns:repeat(3,minmax(0,1fr))}button{font-size:12px}}
+@media(min-width:780px){.grid{grid-template-columns:repeat(5,minmax(0,1fr));gap:14px;padding:14px 18px 40px}h3{font-size:15px}}
+</style></head><body>
+<header><h1>Shopping OS</h1><p class="meta">Database First v7｜63 張主卡｜資料完整度 88.7%</p></header>
+<section class="toolbar"><div class="search-wrap"><input id="search" class="search" placeholder="搜尋商品、日文名稱、品牌或標籤"></div><nav class="filters"><button class="main-filter active" data-filter="全部">全部</button><button class="main-filter " data-filter="藥妝">藥妝</button><button class="main-filter " data-filter="無印良品">無印良品</button><button class="main-filter " data-filter="超商">超商</button><button class="main-filter " data-filter="BIC Camera">BIC Camera</button><button class="main-filter " data-filter="超市">超市</button><button class="main-filter " data-filter="伴手禮店">伴手禮店</button><button class="main-filter " data-filter="Outlet">Outlet</button><button class="main-filter " data-filter="北海道大學">北海道大學</button></nav></section>
+<section id="subpanel" class="subpanel"><nav class="filters"><button class="sub-filter subactive" data-subfilter="全部藥妝">全部藥妝</button><button class="sub-filter " data-subfilter="保健">保健</button><button class="sub-filter " data-subfilter="保養">保養</button><button class="sub-filter " data-subfilter="彩妝">彩妝</button><button class="sub-filter " data-subfilter="口腔">口腔</button><button class="sub-filter " data-subfilter="醫藥">醫藥</button></nav></section>
+<main class="grid"><article class="card" data-channel="超商" data-subcategory="" data-search="Bocca 白色布丁 牧家の白いプリン ">
+    <div class="photo"><img src="assets/images/thumbs/JP0007_aa927d397d3e.webp" alt="Bocca 白色布丁" loading="lazy" decoding="async" width="360" height="640"></div>
+    <div class="body">
+      <h3>Bocca 白色布丁</h3>
+      <p class="jp">牧家の白いプリン</p>
+      <p class="channel">超商</p>
+      
+      <details><summary>查看同系列</summary><ul><li>Bocca 焦糖布蕾</li></ul></details>
+    </div>
+  </article><article class="card" data-channel="超商" data-subcategory="" data-search="RINGO-AME 蘋果糖 りんご飴 ">
+    <div class="photo"><img src="assets/images/thumbs/JP0023_03175286a6b9.webp" alt="RINGO-AME 蘋果糖" loading="lazy" decoding="async" width="480" height="640"></div>
+    <div class="body">
+      <h3>RINGO-AME 蘋果糖</h3>
+      <p class="jp">りんご飴</p>
+      <p class="channel">超商</p>
+      
+      
+    </div>
+  </article><article class="card" data-channel="超商" data-subcategory="" data-search="肩里肌生火腿 肩ロース生ハム ">
+    <div class="photo"><img src="assets/images/thumbs/PH0071_738d5b875bb5.webp" alt="肩里肌生火腿" loading="lazy" decoding="async" width="549" height="640"></div>
+    <div class="body">
+      <h3>肩里肌生火腿</h3>
+      <p class="jp">肩ロース生ハム</p>
+      <p class="channel">超商</p>
+      
+      
+    </div>
+  </article><article class="card" data-channel="超商" data-subcategory="" data-search="HOT CHEF 飯糰 HOT CHEF おにぎり ">
+    <div class="photo"><img src="assets/images/thumbs/JP0028_ad113a2e090c.webp" alt="HOT CHEF 飯糰" loading="lazy" decoding="async" width="439" height="640"></div>
+    <div class="body">
+      <h3>HOT CHEF 飯糰</h3>
+      <p class="jp">HOT CHEF おにぎり</p>
+      <p class="channel">超商</p>
+      
+      <details><summary>查看同系列</summary><ul><li>Seicomart 馬鈴薯薯條</li><li>Seicomart 巧克力可頌</li><li>Seicomart 哈密瓜霜淇淋</li></ul></details>
+    </div>
+  </article><article class="card" data-channel="超商" data-subcategory="" data-search="Coleman DARKROOM 自動開關折疊傘 55cm Coleman 晴雨兼用 自動開閉 折りたたみ傘 55cm ">
+    <div class="photo"><img src="assets/images/thumbs/JP0041_88d9ba1ca96b.webp" alt="Coleman DARKROOM 自動開關折疊傘 55cm" loading="lazy" decoding="async" width="640" height="514"></div>
+    <div class="body">
+      <h3>Coleman DARKROOM 自動開關折疊傘 55cm</h3>
+      <p class="jp">Coleman 晴雨兼用 自動開閉 折りたたみ傘 55cm</p>
+      <p class="channel">超商</p>
+      
+      
+    </div>
+  </article><article class="card" data-channel="超商" data-subcategory="" data-search="Coleman × LAWSON 聯名晴雨傘 Coleman × LAWSON 折りたたみ傘／晴雨兼用傘 ">
+    <div class="photo"><img src="assets/images/thumbs/PH0030_c4c5f03cba83.webp" alt="Coleman × LAWSON 聯名晴雨傘" loading="lazy" decoding="async" width="294" height="640"></div>
+    <div class="body">
+      <h3>Coleman × LAWSON 聯名晴雨傘</h3>
+      <p class="jp">Coleman × LAWSON 折りたたみ傘／晴雨兼用傘</p>
+      <p class="channel">超商</p>
+      
+      
+    </div>
+  </article></main>
+<script>
+const cards=[...document.querySelectorAll('.card')],recommendedView=document.getElementById('recommendedView'),allView=document.getElementById('allView'),modeRecommended=document.getElementById('modeRecommended'),modeAll=document.getElementById('modeAll'),mainBtns=[...document.querySelectorAll('.main-filter')],subBtns=[...document.querySelectorAll('.sub-filter')],search=document.getElementById('search'),subpanel=document.getElementById('subpanel');
+let main='全部',sub='全部藥妝',q='';
+function render(){cards.forEach(c=>{let ok=(main==='全部'||c.dataset.channel.includes(main));if(ok&&main==='藥妝'&&sub!=='全部藥妝')ok=c.dataset.subcategory===sub;if(ok&&q)ok=c.dataset.search.toLowerCase().includes(q);c.style.display=ok?'block':'none'})}
+mainBtns.forEach(b=>b.onclick=()=>{main=b.dataset.filter;sub='全部藥妝';mainBtns.forEach(x=>x.classList.remove('active'));b.classList.add('active');subBtns.forEach(x=>x.classList.remove('subactive'));document.querySelector('[data-subfilter="全部藥妝"]').classList.add('subactive');subpanel.classList.toggle('visible',main==='藥妝');render()});
+subBtns.forEach(b=>b.onclick=()=>{sub=b.dataset.subfilter;subBtns.forEach(x=>x.classList.remove('subactive'));b.classList.add('subactive');render()});
+if(modeRecommended&&modeAll){
+modeRecommended.onclick=()=>{recommendedView.hidden=false;allView.hidden=true;modeRecommended.classList.add('active');modeAll.classList.remove('active')}
+modeAll.onclick=()=>{recommendedView.hidden=true;allView.hidden=false;modeAll.classList.add('active');modeRecommended.classList.remove('active');render()}
+}
+search.oninput=()=>{q=search.value.trim().toLowerCase();if(allView&&allView.hidden){recommendedView.hidden=true;allView.hidden=false;modeAll.classList.add('active');modeRecommended.classList.remove('active')}render()};render();
+</script></body></html>
