@@ -1,17 +1,260 @@
 <!doctype html><html lang="zh-Hant"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Shopping OS</title><style>
 :root{--bg:#f4f4f0;--panel:#e8efe9;--border:#cfdbd1;--active:#315f4c;--sub:#f4e9df;--subactive:#9b5f35;--ink:#17202a}
-*{box-sizing:border-box}[hidden]{display:none!important}body{margin:0;background:var(--bg);font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;color:var(--ink)}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;color:var(--ink)}
 header{padding:18px 16px 12px;background:#fff;border-bottom:1px solid #ddd}h1{margin:0 0 5px}.meta{font-size:13px;color:#777;margin:0}
-.toolbar{padding:12px;background:var(--panel);border-bottom:1px solid var(--border)}.filters{display:grid;grid-template-columns:repeat(auto-fit,minmax(88px,1fr));gap:8px;max-width:1180px;margin:auto}
+.toolbar{padding:12px;background:var(--panel);border-bottom:1px solid var(--border)}.home-mode-wrap{display:flex;gap:8px;padding:12px 12px 0;max-width:1180px;margin:auto}.home-mode{border:1px solid var(--border);border-radius:999px;padding:9px 18px;background:#fff}.home-mode.active{background:var(--active);color:#fff;font-weight:700}.filters{display:grid;grid-template-columns:repeat(auto-fit,minmax(88px,1fr));gap:8px;max-width:1180px;margin:auto}
 button,.search{border:1px solid var(--border);border-radius:14px;padding:10px 8px;background:#fff;font-size:14px;min-width:0}.active{background:var(--active);color:#fff;font-weight:700}
 .search-wrap{max-width:1180px;margin:0 auto 10px}.search{width:100%}.subpanel{display:none;padding:10px 12px;background:var(--sub);border-bottom:1px solid #e3d0bf}.subpanel.visible{display:block}.subactive{background:var(--subactive);color:#fff}
 .grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px;padding:14px 12px 30px}.card{background:#fff;border:1px solid #ddd;border-radius:16px;overflow:hidden;min-width:0}.photo{aspect-ratio:1/1;padding:7px;display:flex;align-items:center;justify-content:center}.photo img{width:100%;height:100%;object-fit:contain;content-visibility:auto}.missing{color:#999;font-size:12px}.body{padding:9px}h3{font-size:13px;line-height:1.35;margin:0 0 5px}.jp,.channel{font-size:10px;color:#666;margin:0 0 6px}.tags{display:flex;gap:4px;flex-wrap:wrap;margin:6px 0}.tags span{font-size:9px;padding:3px 6px;background:#eef2ee;border-radius:999px}details{font-size:10px}
 @media(max-width:420px){.filters{grid-template-columns:repeat(3,minmax(0,1fr))}button{font-size:12px}}
 @media(min-width:780px){.grid{grid-template-columns:repeat(5,minmax(0,1fr));gap:14px;padding:14px 18px 40px}h3{font-size:15px}}
+
+@media (max-width: 640px){
+  .search{
+    font-size:18px !important;
+    min-height:50px;
+  }
+  button,
+  .main-filter,
+  .sub-filter,
+  .home-mode{
+    font-size:18px !important;
+    line-height:1.25;
+    min-height:50px;
+    padding:12px 9px;
+  }
+  .home-mode{
+    padding:12px 20px;
+  }
+  h3{
+    font-size:18px !important;
+    line-height:1.4;
+  }
+  .jp,
+  .channel{
+    font-size:15px !important;
+    line-height:1.5;
+  }
+  .tags span{
+    font-size:14px !important;
+    line-height:1.25;
+    padding:6px 9px;
+  }
+  details,
+  details summary,
+  details li{
+    font-size:15px !important;
+    line-height:1.5;
+  }
+}
+
+
+/* 上方操作區視覺辨識優化 */
+.filter-section-title{
+  max-width:1180px;
+  margin:2px auto 9px;
+  padding:0 2px;
+  color:#28483b;
+  font-size:15px;
+  font-weight:800;
+  letter-spacing:.06em;
+}
+.main-filter,
+.sub-filter,
+.home-mode{
+  -webkit-appearance:none;
+  appearance:none;
+  color:#1f2d27;
+  border:2px solid #b8c9c0;
+  box-shadow:0 1px 0 rgba(23,32,42,.04);
+}
+.main-filter:not(.active),
+.sub-filter:not(.subactive),
+.home-mode:not(.active){
+  background:#fff;
+  color:#1f2d27;
+}
+.main-filter.active,
+.home-mode.active{
+  background:var(--active);
+  color:#fff;
+  border-color:var(--active);
+  box-shadow:0 3px 8px rgba(49,95,76,.18);
+}
+.sub-filter.subactive{
+  background:var(--subactive);
+  color:#fff;
+  border-color:var(--subactive);
+}
+@media (max-width:640px){
+  .filter-section-title{
+    font-size:16px;
+    margin-bottom:10px;
+  }
+  .main-filter,
+  .sub-filter,
+  .home-mode{
+    color:#17202a !important;
+    border-width:2px;
+    font-weight:700;
+  }
+  .main-filter.active,
+  .home-mode.active,
+  .sub-filter.subactive{
+    color:#fff !important;
+  }
+  .toolbar{
+    padding-top:14px;
+    padding-bottom:14px;
+  }
+  .filters{
+    gap:10px;
+  }
+}
+
+
+/* 首頁 UI 微調：僅影響 index.html */
+.main-filter,
+.sub-filter{
+  font-size:18px !important;
+  font-weight:700;
+  border:2px solid #aebfb6;
+  color:#1d2a24 !important;
+  background:#fff;
+}
+.main-filter.active{
+  background:#274f3f;
+  border-color:#274f3f;
+  color:#fff !important;
+  box-shadow:0 2px 6px rgba(39,79,63,.18);
+}
+.sub-filter.subactive{
+  background:#8b5531;
+  border-color:#8b5531;
+  color:#fff !important;
+}
+
+
+/* 商品圖片區保持乾淨：移除圖片本身的框線 */
+.photo img{
+  border:0 !important;
+  outline:0 !important;
+  box-shadow:none !important;
+  background:transparent;
+}
+
+
+/* Single List Fix v11：只調整首頁視覺層級，不改功能與資料 */
+:root{
+  --radius-ui:18px;
+  --radius-card:18px;
+}
+
+header{
+  padding:18px 16px 14px;
+}
+header h1{
+  margin:0 0 3px;
+  font-weight:760;
+  letter-spacing:-.02em;
+}
+.header-subtitle{
+  margin:0 0 5px;
+  font-size:14px;
+  color:#405248;
+  font-weight:600;
+}
+.meta{
+  font-size:12px;
+  color:#8a918d;
+}
+
+.search,
+.main-filter,
+.sub-filter{
+  border-radius:var(--radius-ui);
+}
+.search{
+  min-height:48px;
+}
+
+.grid{
+  gap:12px;
+  padding:16px 12px 32px;
+}
+.card{
+  border-radius:var(--radius-card);
+  border:1px solid #e1e4e2;
+  box-shadow:0 1px 4px rgba(23,32,42,.06);
+  background:#fff;
+}
+.photo{
+  aspect-ratio:1/1;
+  padding:7px;
+  background:#fff;
+}
+.photo img{
+  width:100%;
+  height:100%;
+  object-fit:contain;
+  transform:none !important;
+}
+.body{
+  padding:8px 9px 10px;
+}
+.body h3{
+  margin:0 0 4px;
+  font-weight:700;
+}
+.jp{
+  color:#7b807d;
+  margin-bottom:5px;
+}
+.channel{
+  display:block;
+  margin:0;
+  padding:0;
+  background:none;
+  border:0;
+  color:#8a908d;
+  font-size:12px !important;
+  line-height:1.4;
+}
+.card:active{
+  transform:scale(.99);
+  box-shadow:0 1px 2px rgba(23,32,42,.04);
+}
+
+@media (max-width:640px){
+  .grid{
+    gap:10px;
+    padding-top:14px;
+  }
+  .card{
+    border-radius:16px;
+  }
+  .photo{
+    padding:6px;
+  }
+  .body{
+    padding:7px 8px 9px;
+  }
+  .header-subtitle{
+    font-size:14px;
+  }
+}
+
+
+[hidden]{display:none!important}
 </style></head><body>
-<header><h1>Shopping OS</h1><p class="meta">Database First v7｜65 張主卡｜資料完整度 89%</p></header>
-<section class="toolbar"><div class="search-wrap"><input id="search" class="search" placeholder="搜尋商品、日文名稱、品牌或標籤"></div><nav class="filters"><button class="main-filter active" data-filter="全部">全部</button><button class="main-filter " data-filter="藥妝">藥妝</button><button class="main-filter " data-filter="無印良品">無印良品</button><button class="main-filter " data-filter="超商">超商</button><button class="main-filter " data-filter="BIC Camera">BIC Camera</button><button class="main-filter " data-filter="超市">超市</button><button class="main-filter " data-filter="伴手禮店">伴手禮店</button><button class="main-filter " data-filter="Outlet">Outlet</button><button class="main-filter " data-filter="北海道大學">北海道大學</button></nav></section>
+<header>
+  <h1>Shopping OS</h1>
+  <p class="header-subtitle">日本採買系統</p>
+  <p class="meta">Database First v7｜65 張主卡｜資料完整度 89%｜Single List Fix v11</p>
+</header>
+<section class="toolbar"><div class="search-wrap"><input id="search" class="search" placeholder="搜尋商品…"></div><div class="filter-section-title">商品分類</div><nav class="filters"><button class="main-filter active" data-filter="全部">全部</button><button class="main-filter " data-filter="藥妝">藥妝</button><button class="main-filter " data-filter="無印良品">無印良品</button><button class="main-filter " data-filter="超商">超商</button><button class="main-filter " data-filter="BIC Camera">BIC Camera</button><button class="main-filter " data-filter="超市">超市</button><button class="main-filter " data-filter="伴手禮店">伴手禮店</button><button class="main-filter " data-filter="Outlet">Outlet</button><button class="main-filter " data-filter="北海道大學">北海道大學</button></nav></section>
 <section id="subpanel" class="subpanel"><nav class="filters"><button class="sub-filter subactive" data-subfilter="全部藥妝">全部藥妝</button><button class="sub-filter " data-subfilter="保健">保健</button><button class="sub-filter " data-subfilter="保養">保養</button><button class="sub-filter " data-subfilter="彩妝">彩妝</button><button class="sub-filter " data-subfilter="口腔">口腔</button><button class="sub-filter " data-subfilter="醫藥">醫藥</button></nav></section>
+
 <main id="productGrid" class="grid"><article class="card" data-channel="北海道大學" data-subcategory="" data-search="北海道大學牛奶布丁 北大牛乳プリン ">
     <div class="photo"><img loading="eager" fetchpriority="high" src="assets/images/thumbs/JP0022_7376b61a9d32.webp" alt="北海道大學牛奶布丁" loading="lazy" decoding="async" width="640" height="637"></div>
     <div class="body">
@@ -599,10 +842,64 @@ button,.search{border:1px solid var(--border);border-radius:14px;padding:10px 8p
     </div>
   </article></main>
 <script>
-const productGrid=document.getElementById('productGrid'),cards=[...productGrid.querySelectorAll('.card')],mainBtns=[...document.querySelectorAll('.main-filter')],subBtns=[...document.querySelectorAll('.sub-filter')],search=document.getElementById('search'),subpanel=document.getElementById('subpanel');
-let main='全部',sub='全部藥妝',q='';
-function render(){cards.forEach(c=>{let ok=(main==='全部'||c.dataset.channel.includes(main));if(ok&&main==='藥妝'&&sub!=='全部藥妝')ok=c.dataset.subcategory===sub;if(ok&&q)ok=c.dataset.search.toLowerCase().includes(q);c.style.display=ok?'block':'none'})}
-mainBtns.forEach(b=>b.onclick=()=>{main=b.dataset.filter;sub='全部藥妝';mainBtns.forEach(x=>x.classList.remove('active'));b.classList.add('active');subBtns.forEach(x=>x.classList.remove('subactive'));document.querySelector('[data-subfilter="全部藥妝"]').classList.add('subactive');subpanel.classList.toggle('visible',main==='藥妝');render()});
-subBtns.forEach(b=>b.onclick=()=>{sub=b.dataset.subfilter;subBtns.forEach(x=>x.classList.remove('subactive'));b.classList.add('subactive');render()});
-search.oninput=()=>{q=search.value.trim().toLowerCase();render()};render();
+const cards = [...document.querySelectorAll('#productGrid .card')];
+const mainBtns = [...document.querySelectorAll('.main-filter')];
+const subBtns = [...document.querySelectorAll('.sub-filter')];
+const search = document.getElementById('search');
+const subpanel = document.getElementById('subpanel');
+
+let main = '全部';
+let sub = '全部藥妝';
+let q = '';
+
+function render() {
+  cards.forEach(card => {
+    let visible = main === '全部' || card.dataset.channel === main;
+
+    if (visible && main === '藥妝' && sub !== '全部藥妝') {
+      visible = card.dataset.subcategory === sub;
+    }
+
+    if (visible && q) {
+      visible = (card.dataset.search || '').toLowerCase().includes(q);
+    }
+
+    card.hidden = !visible;
+  });
+}
+
+mainBtns.forEach(button => {
+  button.addEventListener('click', () => {
+    main = button.dataset.filter;
+    sub = '全部藥妝';
+
+    mainBtns.forEach(item => item.classList.remove('active'));
+    button.classList.add('active');
+
+    subBtns.forEach(item => item.classList.remove('subactive'));
+    const allDrugButton = document.querySelector('[data-subfilter="全部藥妝"]');
+    if (allDrugButton) allDrugButton.classList.add('subactive');
+
+    subpanel.classList.toggle('visible', main === '藥妝');
+    render();
+  });
+});
+
+subBtns.forEach(button => {
+  button.addEventListener('click', () => {
+    sub = button.dataset.subfilter;
+
+    subBtns.forEach(item => item.classList.remove('subactive'));
+    button.classList.add('subactive');
+
+    render();
+  });
+});
+
+search.addEventListener('input', () => {
+  q = search.value.trim().toLowerCase();
+  render();
+});
+
+render();
 </script></body></html>
