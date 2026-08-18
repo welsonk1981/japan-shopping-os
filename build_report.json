@@ -1,0 +1,28 @@
+{
+  "version": "7.2.0",
+  "generated_at": "2026-08-18T02:25:38.654Z",
+  "output": {
+    "index": "website/index.html",
+    "category_pages": 8,
+    "region_tag_pages": 1,
+    "copied_images": 73,
+    "homepage_mode": "single_list",
+    "all_order": "primary_channel + display_order",
+    "performance": {
+      "thumbnails": true,
+      "thumbnail_max_dimension": 640,
+      "lazy_loading": true,
+      "eager_first_images": 9,
+      "async_decoding": true
+    }
+  },
+  "preflight": {
+    "products": 74,
+    "active_products": 73,
+    "photos": 73,
+    "mappings": 101,
+    "errors": 0,
+    "warnings": 8,
+    "completeness_percent": 89
+  }
+}

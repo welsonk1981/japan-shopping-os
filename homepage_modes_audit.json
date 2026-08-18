@@ -1,0 +1,90 @@
+{
+  "version": "7.2.0",
+  "homepage_modes": {
+    "推薦": {
+      "default": true,
+      "sort_field": "homepage_order",
+      "items": [
+        {
+          "商品ID": "JP0006",
+          "中文名稱": "夜酵素 DX",
+          "homepage_order": 10
+        },
+        {
+          "商品ID": "JP0046",
+          "中文名稱": "日本鼻うがい洗鼻器套組",
+          "homepage_order": 20
+        },
+        {
+          "商品ID": "JP0045",
+          "中文名稱": "NeilMed 洗鼻器 Starter Kit",
+          "homepage_order": 30
+        },
+        {
+          "商品ID": "JP0048",
+          "中文名稱": "止鼾頭帶",
+          "homepage_order": 40
+        },
+        {
+          "商品ID": "JP0049",
+          "中文名稱": "Breath Through 鼻腔擴張貼",
+          "homepage_order": 50
+        },
+        {
+          "商品ID": "JP0047",
+          "中文名稱": "睡眠用防磨牙／止鼾牙套",
+          "homepage_order": 60
+        },
+        {
+          "商品ID": "JP0039",
+          "中文名稱": "SATO Breeze Light 鼻腔擴張貼",
+          "homepage_order": 70
+        },
+        {
+          "商品ID": "JP0040",
+          "中文名稱": "小林製藥 Nightmin 鼻呼吸貼",
+          "homepage_order": 80
+        },
+        {
+          "商品ID": "JP0052",
+          "中文名稱": "Alesion 20 鼻炎藥",
+          "homepage_order": 90
+        },
+        {
+          "商品ID": "JP0054",
+          "中文名稱": "MORENA BIKA NURSE 鼻下修護膏",
+          "homepage_order": 100
+        },
+        {
+          "商品ID": "JP0058",
+          "中文名稱": "六花亭霜餅",
+          "homepage_order": 110
+        },
+        {
+          "商品ID": "JP0059",
+          "中文名稱": "六花亭雪こん起司",
+          "homepage_order": 120
+        },
+        {
+          "商品ID": "JP0057",
+          "中文名稱": "六花亭草莓巧克力",
+          "homepage_order": 130
+        },
+        {
+          "商品ID": "JP0007",
+          "中文名稱": "Okuchi Lemon 攜帶式漱口水",
+          "homepage_order": 140
+        }
+      ]
+    },
+    "全部": {
+      "default": false,
+      "sort": [
+        "primary_channel",
+        "display_order",
+        "商品ID"
+      ],
+      "description": "顯示完整商品資料庫。"
+    }
+  }
+}
