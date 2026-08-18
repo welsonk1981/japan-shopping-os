@@ -246,7 +246,11 @@ header h1{
 
 
 [hidden]{display:none!important}
-</style></head><body>
+</style>
+<style id="shoppingTripStyles">
+.tripbar{max-width:1180px;margin:10px auto 0;padding:10px 12px;background:#fff;border:1px solid #ddd;border-radius:14px;display:flex;gap:8px;align-items:center;flex-wrap:wrap;font-size:12px}.tripbar strong{font-size:13px}.tripbar .spacer{flex:1}.tripbar button,.buy-state{border:1px solid #d7d7d7;background:#fff;border-radius:10px;padding:7px 9px;font-weight:700}.tripbar button.active{background:#111;color:#fff}.buy-state{width:100%;margin-top:8px}.card[data-buy-state="bought"]{opacity:.58}.card[data-buy-state="bought"] .buy-state{background:#111;color:#fff}.card[data-buy-state="skip"]{opacity:.48}.purchase-modal{position:fixed;inset:0;background:rgba(0,0,0,.35);display:none;align-items:center;justify-content:center;padding:20px;z-index:999}.purchase-modal.open{display:flex}.purchase-box{width:min(420px,100%);background:#fff;border-radius:18px;padding:18px}.purchase-box h2{margin:0 0 12px;font-size:18px}.purchase-box input{width:100%;box-sizing:border-box;padding:10px;border:1px solid #ccc;border-radius:10px;margin:6px 0 12px}.purchase-actions{display:flex;gap:8px;justify-content:flex-end}.purchase-actions button{padding:9px 12px;border-radius:10px;border:1px solid #ccc;background:#fff;font-weight:700}.purchase-actions .primary{background:#111;color:#fff}.history-list{font-size:12px;line-height:1.7;max-height:180px;overflow:auto;margin:8px 0 14px}
+</style>
+</head><body>
 <header>
   <h1>Shopping OS</h1>
   <p class="header-subtitle">日本採買系統</p>
@@ -902,4 +906,27 @@ search.addEventListener('input', () => {
 });
 
 render();
-</script></body></html>
+</script>
+<script id="shoppingTripFeature">
+(()=>{
+const KEY='shoppingOS.purchase.v1';
+const load=()=>{try{return JSON.parse(localStorage.getItem(KEY))||{current:null,history:[]}}catch(e){return{current:null,history:[]}}};
+let data=load(), onlyTodo=false;
+const save=()=>localStorage.setItem(KEY,JSON.stringify(data));
+const cards=[...document.querySelectorAll('#productGrid .card')];
+const productKey=c=>c.dataset.search||c.querySelector('h3')?.textContent.trim()||String(cards.indexOf(c));
+function ensureTrip(){if(!data.current)data.current={name:'本次採買',created:new Date().toISOString(),states:{}};}
+ensureTrip();
+const toolbar=document.querySelector('.toolbar');
+const bar=document.createElement('div');bar.className='tripbar';bar.innerHTML='<strong id="tripName"></strong><span id="tripCount"></span><span class="spacer"></span><button id="todoToggle">只看未買</button><button id="tripSettings">⚙️ 採買設定</button>';toolbar.appendChild(bar);
+const modal=document.createElement('div');modal.className='purchase-modal';modal.innerHTML='<div class="purchase-box"><h2>採買設定</h2><label>本次採買名稱</label><input id="tripNameInput"><div id="tripSummary"></div><div class="history-list" id="tripHistory"></div><div class="purchase-actions"><button id="newTrip">＋ 開始新一輪採買</button><button id="closeTrip" class="primary">完成</button></div></div>';document.body.appendChild(modal);
+cards.forEach(c=>{const b=document.createElement('button');b.className='buy-state';b.type='button';b.addEventListener('click',()=>{const k=productKey(c),s=data.current.states[k]||'todo';data.current.states[k]=s==='todo'?'bought':s==='bought'?'skip':'todo';save();paint();});c.querySelector('.body')?.appendChild(b);});
+function paint(){let bought=0,todo=0,skip=0;cards.forEach(c=>{const s=data.current.states[productKey(c)]||'todo';c.dataset.buyState=s;const b=c.querySelector('.buy-state');if(b)b.textContent=s==='bought'?'✓ 已買':s==='skip'?'— 跳過':'○ 未買';if(s==='bought')bought++;else if(s==='skip')skip++;else todo++;if(onlyTodo)c.style.display=s==='todo'?'':'none';else c.style.display='';});document.getElementById('tripName').textContent='🧳 '+data.current.name;document.getElementById('tripCount').textContent=`${bought} / ${cards.length} 已買`;document.getElementById('todoToggle').classList.toggle('active',onlyTodo);}
+document.getElementById('todoToggle').onclick=()=>{onlyTodo=!onlyTodo;paint();};
+document.getElementById('tripSettings').onclick=()=>{document.getElementById('tripNameInput').value=data.current.name;const vals=Object.values(data.current.states);document.getElementById('tripSummary').textContent=`已買 ${vals.filter(x=>x==='bought').length}　跳過 ${vals.filter(x=>x==='skip').length}`;document.getElementById('tripHistory').innerHTML='<b>過去採買紀錄</b><br>'+((data.history||[]).map(x=>`${x.name}　✓ ${Object.values(x.states||{}).filter(v=>v==='bought').length} 件`).join('<br>')||'尚無紀錄');modal.classList.add('open');};
+document.getElementById('closeTrip').onclick=()=>{const n=document.getElementById('tripNameInput').value.trim();if(n)data.current.name=n;save();modal.classList.remove('open');paint();};
+document.getElementById('newTrip').onclick=()=>{if(!confirm('建立新的採買紀錄？目前紀錄會保留，商品會全部恢復為「未買」。'))return;data.history=data.history||[];data.history.unshift(data.current);data.current={name:'新一輪採買',created:new Date().toISOString(),states:{}};save();modal.classList.remove('open');paint();};
+paint();
+})();
+</script>
+</body></html>
