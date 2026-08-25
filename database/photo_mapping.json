@@ -1,0 +1,875 @@
+{
+  "schema_version": "6.2.0",
+  "count": 104,
+  "mappings": [
+    {
+      "商品ID": "JP0008",
+      "PhotoID": "",
+      "驗證狀態": "MISMATCH",
+      "信心值": 100,
+      "人工確認": false,
+      "驗證備註": "圖片為飲品／布丁貨架，並非 Okuchi Lime 漱口水",
+      "最後驗證時間": "2026-08-03"
+    },
+    {
+      "商品ID": "JP0012",
+      "PhotoID": "PH0004",
+      "驗證狀態": "VERIFIED",
+      "信心值": 98,
+      "人工確認": false,
+      "驗證備註": "包裝可辨識為 MUJI 鹽味南高梅沖泡飲",
+      "最後驗證時間": "2026-08-03",
+      "PHOTO_ROLE": "PRIMARY",
+      "修正版本": "v5.1"
+    },
+    {
+      "商品ID": "JP0013",
+      "PhotoID": "PH0005",
+      "驗證狀態": "VERIFIED",
+      "信心值": 90,
+      "人工確認": false,
+      "驗證備註": "影片截圖與包裝內容對應韃靼蕎麥茶",
+      "最後驗證時間": "2026-08-03",
+      "PHOTO_ROLE": "PRIMARY",
+      "修正版本": "v5.1"
+    },
+    {
+      "商品ID": "JP0015",
+      "PhotoID": "PH0007",
+      "驗證狀態": "VERIFIED",
+      "信心值": 95,
+      "人工確認": false,
+      "驗證備註": "影片截圖與包裝內容對應黑豆茶",
+      "最後驗證時間": "2026-08-03",
+      "PHOTO_ROLE": "PRIMARY",
+      "修正版本": "v5.1"
+    },
+    {
+      "商品ID": "JP0016",
+      "PhotoID": "PH0008",
+      "驗證狀態": "VERIFIED",
+      "信心值": 95,
+      "人工確認": false,
+      "驗證備註": "影片截圖與包裝內容對應紅豆茶",
+      "最後驗證時間": "2026-08-03",
+      "PHOTO_ROLE": "PRIMARY",
+      "修正版本": "v5.1"
+    },
+    {
+      "商品ID": "JP0021",
+      "PhotoID": "",
+      "驗證狀態": "MISMATCH",
+      "信心值": 100,
+      "人工確認": false,
+      "驗證備註": "圖片為飲品／布丁貨架，未顯示 Bocca 焦糖布蕾",
+      "最後驗證時間": "2026-08-03"
+    },
+    {
+      "商品ID": "JP0025",
+      "PhotoID": "",
+      "驗證狀態": "SHARED_REFERENCE",
+      "信心值": 80,
+      "人工確認": false,
+      "驗證備註": "截圖顯示生火腿商品，但無法唯一確認為肩里肌品項",
+      "最後驗證時間": "2026-08-03"
+    },
+    {
+      "商品ID": "JP0029",
+      "PhotoID": "",
+      "驗證狀態": "SHARED_REFERENCE",
+      "信心值": 70,
+      "人工確認": false,
+      "驗證備註": "Seicomart 合輯圖，非馬鈴薯薯條單品主圖",
+      "最後驗證時間": "2026-08-03"
+    },
+    {
+      "商品ID": "JP0030",
+      "PhotoID": "",
+      "驗證狀態": "SHARED_REFERENCE",
+      "信心值": 85,
+      "人工確認": false,
+      "驗證備註": "Seicomart 合輯圖含哈密瓜霜淇淋，但非單品主圖",
+      "最後驗證時間": "2026-08-03"
+    },
+    {
+      "商品ID": "JP0031",
+      "PhotoID": "",
+      "驗證狀態": "SHARED_REFERENCE",
+      "信心值": 70,
+      "人工確認": false,
+      "驗證備註": "Seicomart 合輯圖，無法清楚辨識巧克力可頌",
+      "最後驗證時間": "2026-08-03"
+    },
+    {
+      "商品ID": "JP0041",
+      "PhotoID": "PH0026",
+      "驗證狀態": "VERIFIED",
+      "信心值": 99,
+      "人工確認": false,
+      "驗證備註": "圖片清楚顯示 Coleman DARKROOM 折疊傘",
+      "最後驗證時間": "2026-08-03",
+      "PHOTO_ROLE": "SECONDARY",
+      "修正版本": "v5.1"
+    },
+    {
+      "商品ID": "JP0042",
+      "PhotoID": "PH0027",
+      "驗證狀態": "VERIFIED",
+      "信心值": 95,
+      "人工確認": false,
+      "驗證備註": "影片截圖顯示 S.Labo 白檀固體香膏",
+      "最後驗證時間": "2026-08-03",
+      "PHOTO_ROLE": "PRIMARY",
+      "修正版本": "v5.1"
+    },
+    {
+      "商品ID": "JP0055",
+      "PhotoID": "",
+      "驗證狀態": "MISSING",
+      "信心值": 0,
+      "人工確認": false,
+      "驗證備註": "目前沒有可供驗證的圖片",
+      "最後驗證時間": "2026-08-03"
+    },
+    {
+      "商品ID": "JP0056",
+      "PhotoID": "",
+      "驗證狀態": "MISSING",
+      "信心值": 0,
+      "人工確認": false,
+      "驗證備註": "目前沒有可供驗證的圖片",
+      "最後驗證時間": "2026-08-03"
+    },
+    {
+      "商品ID": "JP0057",
+      "PhotoID": "",
+      "驗證狀態": "MISSING",
+      "信心值": 0,
+      "人工確認": false,
+      "驗證備註": "目前沒有可供驗證的圖片",
+      "最後驗證時間": "2026-08-03"
+    },
+    {
+      "商品ID": "JP0058",
+      "PhotoID": "",
+      "驗證狀態": "MISSING",
+      "信心值": 0,
+      "人工確認": false,
+      "驗證備註": "目前沒有可供驗證的圖片",
+      "最後驗證時間": "2026-08-03"
+    },
+    {
+      "商品ID": "JP0059",
+      "PhotoID": "",
+      "驗證狀態": "MISSING",
+      "信心值": 0,
+      "人工確認": false,
+      "驗證備註": "目前沒有可供驗證的圖片",
+      "最後驗證時間": "2026-08-03"
+    },
+    {
+      "商品ID": "JP0060",
+      "PhotoID": "PH0028",
+      "PHOTO_ROLE": "PRIMARY",
+      "驗證狀態": "VERIFIED",
+      "信心值": 99
+    },
+    {
+      "商品ID": "JP0051",
+      "PhotoID": "PH0029",
+      "PHOTO_ROLE": "PRIMARY",
+      "驗證狀態": "VERIFIED",
+      "信心值": 100
+    },
+    {
+      "商品ID": "JP0051",
+      "PhotoID": "PH0032",
+      "PHOTO_ROLE": "SECONDARY",
+      "驗證狀態": "VERIFIED",
+      "信心值": 100
+    },
+    {
+      "商品ID": "JP0050",
+      "PhotoID": "PH0030",
+      "PHOTO_ROLE": "PRIMARY",
+      "驗證狀態": "VERIFIED",
+      "信心值": 100
+    },
+    {
+      "商品ID": "JP0061",
+      "PhotoID": "PH0031",
+      "PHOTO_ROLE": "PRIMARY",
+      "驗證狀態": "VERIFIED",
+      "信心值": 99
+    },
+    {
+      "商品ID": "JP0062",
+      "PhotoID": "PH0033",
+      "PHOTO_ROLE": "GROUP_REFERENCE",
+      "驗證狀態": "SHARED_VERIFIED",
+      "信心值": 95
+    },
+    {
+      "商品ID": "JP0063",
+      "PhotoID": "PH0033",
+      "PHOTO_ROLE": "GROUP_REFERENCE",
+      "驗證狀態": "SHARED_VERIFIED",
+      "信心值": 95
+    },
+    {
+      "商品ID": "JP0064",
+      "PhotoID": "PH0033",
+      "PHOTO_ROLE": "GROUP_REFERENCE",
+      "驗證狀態": "SHARED_VERIFIED",
+      "信心值": 95
+    },
+    {
+      "商品ID": "JP0065",
+      "PhotoID": "PH0033",
+      "PHOTO_ROLE": "GROUP_REFERENCE",
+      "驗證狀態": "SHARED_VERIFIED",
+      "信心值": 90
+    },
+    {
+      "商品ID": "JP0052",
+      "PhotoID": "PH0035",
+      "PHOTO_ROLE": "PRIMARY",
+      "驗證狀態": "VERIFIED",
+      "信心值": 100
+    },
+    {
+      "商品ID": "JP0053",
+      "PhotoID": "PH0036",
+      "PHOTO_ROLE": "PRIMARY",
+      "驗證狀態": "VERIFIED",
+      "信心值": 100
+    },
+    {
+      "商品ID": "JP0009",
+      "PhotoID": "PH0037",
+      "PHOTO_ROLE": "PRIMARY",
+      "驗證狀態": "VERIFIED",
+      "信心值": 100
+    },
+    {
+      "商品ID": "JP0066",
+      "PhotoID": "PH0038",
+      "PHOTO_ROLE": "PRIMARY",
+      "驗證狀態": "VERIFIED",
+      "信心值": 100,
+      "來源版本": "latest-user-upload"
+    },
+    {
+      "商品ID": "JP0010",
+      "PhotoID": "PH0039",
+      "PHOTO_ROLE": "PRIMARY",
+      "驗證狀態": "VERIFIED",
+      "信心值": 100,
+      "來源版本": "latest-user-upload"
+    },
+    {
+      "商品ID": "JP0067",
+      "PhotoID": "PH0040",
+      "PHOTO_ROLE": "PRIMARY",
+      "驗證狀態": "VERIFIED",
+      "信心值": 100,
+      "來源版本": "latest-user-upload"
+    },
+    {
+      "商品ID": "JP0046",
+      "PhotoID": "PH0041",
+      "PHOTO_ROLE": "PRIMARY",
+      "驗證狀態": "VERIFIED",
+      "信心值": 100,
+      "來源版本": "latest-user-upload"
+    },
+    {
+      "商品ID": "JP0045",
+      "PhotoID": "PH0042",
+      "PHOTO_ROLE": "PRIMARY",
+      "驗證狀態": "VERIFIED",
+      "信心值": 100,
+      "來源版本": "latest-user-upload"
+    },
+    {
+      "商品ID": "JP0068",
+      "PhotoID": "PH0043",
+      "PHOTO_ROLE": "PRIMARY",
+      "驗證狀態": "VERIFIED",
+      "信心值": 100,
+      "來源版本": "latest-user-upload"
+    },
+    {
+      "商品ID": "JP0054",
+      "PhotoID": "PH0044",
+      "PHOTO_ROLE": "PRIMARY",
+      "驗證狀態": "VERIFIED",
+      "信心值": 100,
+      "來源版本": "latest-user-upload"
+    },
+    {
+      "商品ID": "JP0006",
+      "PhotoID": "PH0045",
+      "PHOTO_ROLE": "SECONDARY",
+      "驗證狀態": "VERIFIED",
+      "信心值": 100,
+      "來源版本": "latest-user-upload"
+    },
+    {
+      "商品ID": "JP0069",
+      "PhotoID": "PH0046",
+      "PHOTO_ROLE": "PRIMARY",
+      "驗證狀態": "VERIFIED",
+      "信心值": 100,
+      "來源版本": "latest-user-upload"
+    },
+    {
+      "商品ID": "JP0044",
+      "PhotoID": "PH0047",
+      "PHOTO_ROLE": "PRIMARY",
+      "驗證狀態": "VERIFIED",
+      "信心值": 100,
+      "來源版本": "latest-user-upload"
+    },
+    {
+      "商品ID": "JP0070",
+      "PhotoID": "PH0048",
+      "PHOTO_ROLE": "PRIMARY",
+      "驗證狀態": "VERIFIED",
+      "信心值": 100,
+      "來源版本": "latest-user-upload"
+    },
+    {
+      "商品ID": "JP0043",
+      "PhotoID": "PH0049",
+      "PHOTO_ROLE": "PRIMARY",
+      "驗證狀態": "VERIFIED",
+      "信心值": 100,
+      "來源版本": "latest-user-upload"
+    },
+    {
+      "商品ID": "JP0011",
+      "PhotoID": "PH0050",
+      "PHOTO_ROLE": "PRIMARY",
+      "驗證狀態": "VERIFIED",
+      "信心值": 100,
+      "來源版本": "latest-user-upload"
+    },
+    {
+      "商品ID": "JP0005",
+      "PhotoID": "PH0051",
+      "PHOTO_ROLE": "PRIMARY",
+      "驗證狀態": "VERIFIED",
+      "信心值": 100,
+      "來源版本": "latest-user-upload"
+    },
+    {
+      "商品ID": "JP0004",
+      "PhotoID": "PH0052",
+      "PHOTO_ROLE": "PRIMARY",
+      "驗證狀態": "VERIFIED",
+      "信心值": 100,
+      "來源版本": "latest-user-upload"
+    },
+    {
+      "商品ID": "JP0003",
+      "PhotoID": "PH0053",
+      "PHOTO_ROLE": "PRIMARY",
+      "驗證狀態": "VERIFIED",
+      "信心值": 100,
+      "來源版本": "latest-user-upload"
+    },
+    {
+      "商品ID": "JP0007",
+      "PhotoID": "PH0054",
+      "PHOTO_ROLE": "PRIMARY",
+      "驗證狀態": "VERIFIED",
+      "信心值": 100,
+      "來源版本": "latest-user-upload"
+    },
+    {
+      "商品ID": "JP0039",
+      "PhotoID": "PH0055",
+      "PHOTO_ROLE": "PRIMARY",
+      "驗證狀態": "VERIFIED",
+      "信心值": 100,
+      "來源版本": "latest-user-upload"
+    },
+    {
+      "商品ID": "JP0047",
+      "PhotoID": "PH0056",
+      "PHOTO_ROLE": "PRIMARY",
+      "驗證狀態": "VERIFIED",
+      "信心值": 100,
+      "來源版本": "latest-user-upload"
+    },
+    {
+      "商品ID": "JP0049",
+      "PhotoID": "PH0057",
+      "PHOTO_ROLE": "PRIMARY",
+      "驗證狀態": "VERIFIED",
+      "信心值": 100,
+      "來源版本": "latest-user-upload"
+    },
+    {
+      "商品ID": "JP0048",
+      "PhotoID": "PH0058",
+      "PHOTO_ROLE": "PRIMARY",
+      "驗證狀態": "VERIFIED",
+      "信心值": 100,
+      "來源版本": "latest-user-upload"
+    },
+    {
+      "商品ID": "JP0040",
+      "PhotoID": "PH0025",
+      "PHOTO_ROLE": "PRIMARY",
+      "驗證狀態": "VERIFIED",
+      "信心值": 100,
+      "來源版本": "latest-user-upload"
+    },
+    {
+      "商品ID": "JP0038",
+      "PhotoID": "PH0023",
+      "PHOTO_ROLE": "PRIMARY",
+      "驗證狀態": "VERIFIED",
+      "信心值": 100,
+      "來源版本": "latest-user-upload"
+    },
+    {
+      "商品ID": "JP0037",
+      "PhotoID": "PH0022",
+      "PHOTO_ROLE": "PRIMARY",
+      "驗證狀態": "VERIFIED",
+      "信心值": 100,
+      "來源版本": "latest-user-upload"
+    },
+    {
+      "商品ID": "JP0071",
+      "PhotoID": "PH0059",
+      "PHOTO_ROLE": "PRIMARY",
+      "驗證狀態": "VERIFIED",
+      "信心值": 100,
+      "來源版本": "latest-user-upload"
+    },
+    {
+      "商品ID": "JP0035",
+      "PhotoID": "PH0020",
+      "PHOTO_ROLE": "PRIMARY",
+      "驗證狀態": "VERIFIED",
+      "信心值": 100,
+      "來源版本": "latest-user-upload"
+    },
+    {
+      "商品ID": "JP0028",
+      "PhotoID": "PH0016",
+      "PHOTO_ROLE": "PRIMARY",
+      "驗證狀態": "VERIFIED",
+      "信心值": 100,
+      "來源版本": "latest-user-upload"
+    },
+    {
+      "商品ID": "JP0023",
+      "PhotoID": "PH0012",
+      "PHOTO_ROLE": "PRIMARY",
+      "驗證狀態": "VERIFIED",
+      "信心值": 100,
+      "來源版本": "latest-user-upload"
+    },
+    {
+      "商品ID": "JP0022",
+      "PhotoID": "PH0011",
+      "PHOTO_ROLE": "PRIMARY",
+      "驗證狀態": "VERIFIED",
+      "信心值": 100,
+      "來源版本": "latest-user-upload"
+    },
+    {
+      "商品ID": "JP0020",
+      "PhotoID": "PH0003",
+      "PHOTO_ROLE": "PRIMARY",
+      "驗證狀態": "VERIFIED",
+      "信心值": 100,
+      "來源版本": "latest-user-upload"
+    },
+    {
+      "商品ID": "JP0036",
+      "PhotoID": "PH0021",
+      "PHOTO_ROLE": "PRIMARY",
+      "驗證狀態": "VERIFIED",
+      "信心值": 100,
+      "來源版本": "latest-user-upload"
+    },
+    {
+      "商品ID": "JP0001",
+      "PhotoID": "PH0001",
+      "PHOTO_ROLE": "PRIMARY",
+      "驗證狀態": "VERIFIED",
+      "信心值": 100,
+      "來源版本": "latest-user-upload"
+    },
+    {
+      "商品ID": "JP0002",
+      "PhotoID": "PH0002",
+      "PHOTO_ROLE": "PRIMARY",
+      "驗證狀態": "VERIFIED",
+      "信心值": 100,
+      "來源版本": "latest-user-upload"
+    },
+    {
+      "商品ID": "JP0026",
+      "PhotoID": "PH0014",
+      "PHOTO_ROLE": "PRIMARY",
+      "驗證狀態": "VERIFIED",
+      "信心值": 100,
+      "來源版本": "latest-user-upload"
+    },
+    {
+      "商品ID": "JP0027",
+      "PhotoID": "PH0015",
+      "PHOTO_ROLE": "PRIMARY",
+      "驗證狀態": "VERIFIED",
+      "信心值": 100,
+      "來源版本": "latest-user-upload"
+    },
+    {
+      "商品ID": "JP0034",
+      "PhotoID": "PH0019",
+      "PHOTO_ROLE": "PRIMARY",
+      "驗證狀態": "VERIFIED",
+      "信心值": 100,
+      "來源版本": "latest-user-upload"
+    },
+    {
+      "商品ID": "JP0014",
+      "PhotoID": "PH0006",
+      "PHOTO_ROLE": "PRIMARY",
+      "驗證狀態": "VERIFIED",
+      "信心值": 100,
+      "來源版本": "latest-user-upload"
+    },
+    {
+      "商品ID": "JP0032",
+      "PhotoID": "PH0017",
+      "PHOTO_ROLE": "PRIMARY",
+      "驗證狀態": "VERIFIED",
+      "信心值": 100,
+      "來源版本": "latest-user-upload"
+    },
+    {
+      "商品ID": "JP0033",
+      "PhotoID": "PH0018",
+      "PHOTO_ROLE": "PRIMARY",
+      "驗證狀態": "VERIFIED",
+      "信心值": 100,
+      "來源版本": "latest-user-upload"
+    },
+    {
+      "商品ID": "JP0024",
+      "PhotoID": "PH0060",
+      "PHOTO_ROLE": "SECONDARY",
+      "驗證狀態": "VERIFIED",
+      "信心值": 100,
+      "來源版本": "latest-user-upload"
+    },
+    {
+      "商品ID": "JP0019",
+      "PhotoID": "PH0061",
+      "PHOTO_ROLE": "PRIMARY",
+      "驗證狀態": "VERIFIED",
+      "信心值": 100,
+      "來源版本": "latest-user-upload"
+    },
+    {
+      "商品ID": "JP0017",
+      "PhotoID": "PH0062",
+      "PHOTO_ROLE": "PRIMARY",
+      "驗證狀態": "VERIFIED",
+      "信心值": 100,
+      "來源版本": "latest-user-upload"
+    },
+    {
+      "商品ID": "JP0018",
+      "PhotoID": "PH0063",
+      "PHOTO_ROLE": "PRIMARY",
+      "驗證狀態": "VERIFIED",
+      "信心值": 100,
+      "來源版本": "latest-user-upload"
+    },
+    {
+      "商品ID": "JP0001",
+      "PhotoID": "PH0064",
+      "PHOTO_ROLE": "SECONDARY",
+      "驗證狀態": "VERIFIED",
+      "信心值": 100
+    },
+    {
+      "商品ID": "JP0008",
+      "PhotoID": "PH0054",
+      "PHOTO_ROLE": "HIDDEN_SHARED",
+      "驗證狀態": "VERIFIED",
+      "信心值": 100,
+      "隱藏於": "JP0007"
+    },
+    {
+      "商品ID": "JP0029",
+      "PhotoID": "PH0016",
+      "PHOTO_ROLE": "HIDDEN_SHARED",
+      "驗證狀態": "VERIFIED",
+      "信心值": 100,
+      "隱藏於": "JP0028"
+    },
+    {
+      "商品ID": "JP0031",
+      "PhotoID": "PH0016",
+      "PHOTO_ROLE": "HIDDEN_SHARED",
+      "驗證狀態": "VERIFIED",
+      "信心值": 100,
+      "隱藏於": "JP0028"
+    },
+    {
+      "商品ID": "JP0030",
+      "PhotoID": "PH0016",
+      "PHOTO_ROLE": "HIDDEN_SHARED",
+      "驗證狀態": "VERIFIED",
+      "信心值": 100,
+      "隱藏於": "JP0028"
+    },
+    {
+      "商品ID": "JP0025",
+      "PhotoID": "PH0060",
+      "PHOTO_ROLE": "SECONDARY",
+      "驗證狀態": "VERIFIED",
+      "信心值": 100,
+      "來源版本": "v5.2-user-photo-fix"
+    },
+    {
+      "商品ID": "JP0041",
+      "PhotoID": "PH0026",
+      "PHOTO_ROLE": "PRIMARY",
+      "驗證狀態": "VERIFIED",
+      "信心值": 100,
+      "來源版本": "v5.2-user-photo-fix"
+    },
+    {
+      "商品ID": "JP0021",
+      "PhotoID": "PH0003",
+      "PHOTO_ROLE": "SECONDARY",
+      "驗證狀態": "VERIFIED",
+      "信心值": 100,
+      "來源版本": "v5.3-photo-fix"
+    },
+    {
+      "商品ID": "JP0055",
+      "PhotoID": "PH0065",
+      "PHOTO_ROLE": "PRIMARY",
+      "驗證狀態": "VERIFIED",
+      "信心值": 100,
+      "來源版本": "v5.3-photo-fix"
+    },
+    {
+      "商品ID": "JP0056",
+      "PhotoID": "PH0066",
+      "PHOTO_ROLE": "PRIMARY",
+      "驗證狀態": "VERIFIED",
+      "信心值": 100,
+      "來源版本": "v5.3-photo-fix"
+    },
+    {
+      "商品ID": "JP0057",
+      "PhotoID": "PH0067",
+      "PHOTO_ROLE": "PRIMARY",
+      "驗證狀態": "VERIFIED",
+      "信心值": 100,
+      "來源版本": "v5.3-photo-fix"
+    },
+    {
+      "商品ID": "JP0058",
+      "PhotoID": "PH0068",
+      "PHOTO_ROLE": "PRIMARY",
+      "驗證狀態": "VERIFIED",
+      "信心值": 100,
+      "來源版本": "v5.3-photo-fix"
+    },
+    {
+      "商品ID": "JP0059",
+      "PhotoID": "PH0069",
+      "PHOTO_ROLE": "PRIMARY",
+      "驗證狀態": "VERIFIED",
+      "信心值": 100,
+      "來源版本": "v5.3-photo-fix"
+    },
+    {
+      "商品ID": "JP0024",
+      "PhotoID": "PH0060",
+      "PHOTO_ROLE": "SECONDARY",
+      "驗證狀態": "VERIFIED",
+      "信心值": 100,
+      "來源版本": "v5.4"
+    },
+    {
+      "商品ID": "JP0025",
+      "PhotoID": "PH0060",
+      "PHOTO_ROLE": "SECONDARY",
+      "驗證狀態": "VERIFIED",
+      "信心值": 100,
+      "來源版本": "v5.4"
+    },
+    {
+      "商品ID": "JP0006",
+      "PhotoID": "PH0070",
+      "PHOTO_ROLE": "PRIMARY",
+      "驗證狀態": "VERIFIED",
+      "信心值": 100,
+      "來源版本": "v5.4"
+    },
+    {
+      "商品ID": "JP0072",
+      "PhotoID": "PH0045",
+      "PHOTO_ROLE": "PRIMARY",
+      "驗證狀態": "VERIFIED",
+      "信心值": 100,
+      "來源版本": "v5.4"
+    },
+    {
+      "商品ID": "JP0062",
+      "PhotoID": "PH0033",
+      "PHOTO_ROLE": "PRIMARY",
+      "驗證狀態": "VERIFIED",
+      "信心值": 100,
+      "來源版本": "v5.4"
+    },
+    {
+      "商品ID": "JP0063",
+      "PhotoID": "PH0033",
+      "PHOTO_ROLE": "HIDDEN_SHARED",
+      "驗證狀態": "VERIFIED",
+      "信心值": 100,
+      "隱藏於": "JP0062",
+      "來源版本": "v5.4"
+    },
+    {
+      "商品ID": "JP0064",
+      "PhotoID": "PH0033",
+      "PHOTO_ROLE": "HIDDEN_SHARED",
+      "驗證狀態": "VERIFIED",
+      "信心值": 100,
+      "隱藏於": "JP0062",
+      "來源版本": "v5.4"
+    },
+    {
+      "商品ID": "JP0065",
+      "PhotoID": "PH0033",
+      "PHOTO_ROLE": "HIDDEN_SHARED",
+      "驗證狀態": "VERIFIED",
+      "信心值": 100,
+      "隱藏於": "JP0062",
+      "來源版本": "v5.4"
+    },
+    {
+      "商品ID": "JP0025",
+      "PhotoID": "PH0060",
+      "PHOTO_ROLE": "SECONDARY",
+      "驗證狀態": "VERIFIED",
+      "信心值": 100,
+      "來源版本": "v5.5-ham-merge"
+    },
+    {
+      "商品ID": "JP0024",
+      "PhotoID": "PH0060",
+      "PHOTO_ROLE": "SECONDARY",
+      "驗證狀態": "VERIFIED",
+      "信心值": 100,
+      "隱藏於": "JP0025",
+      "來源版本": "v5.5-ham-merge"
+    },
+    {
+      "商品ID": "JP0021",
+      "PhotoID": "PH0003",
+      "PHOTO_ROLE": "HIDDEN_SHARED",
+      "驗證狀態": "VERIFIED",
+      "信心值": 100,
+      "隱藏於": "JP0020",
+      "來源版本": "v6"
+    },
+    {
+      "商品ID": "JP0025",
+      "PhotoID": "PH0060",
+      "PHOTO_ROLE": "SECONDARY",
+      "驗證狀態": "VERIFIED",
+      "信心值": 100,
+      "來源版本": "v6-ham-correct"
+    },
+    {
+      "商品ID": "JP0025",
+      "PhotoID": "PH0071",
+      "PHOTO_ROLE": "PRIMARY",
+      "驗證狀態": "VERIFIED",
+      "信心值": 100,
+      "來源版本": "v6.2"
+    },
+    {
+      "商品ID": "JP0024",
+      "PhotoID": "PH0071",
+      "PHOTO_ROLE": "MERGED_REFERENCE",
+      "驗證狀態": "VERIFIED",
+      "信心值": 100,
+      "合併至": "JP0025",
+      "來源版本": "v6.2"
+    },
+    {
+      "商品ID": "JP0073",
+      "PhotoID": "PH0072",
+      "PHOTO_ROLE": "PRIMARY",
+      "驗證狀態": "VERIFIED",
+      "信心值": 100,
+      "人工確認": true,
+      "驗證備註": "使用者提供對應商品圖片",
+      "最後驗證時間": "2026-08-18",
+      "來源版本": "2026-08-18-1025"
+    },
+    {
+      "商品ID": "JP0074",
+      "PhotoID": "PH0073",
+      "PHOTO_ROLE": "PRIMARY",
+      "驗證狀態": "VERIFIED",
+      "信心值": 100,
+      "人工確認": true,
+      "驗證備註": "使用者提供對應商品圖片",
+      "最後驗證時間": "2026-08-18",
+      "來源版本": "2026-08-18-1025"
+    },
+    {
+      "商品ID": "JP0075",
+      "PhotoID": "PH0074",
+      "PHOTO_ROLE": "PRIMARY",
+      "驗證狀態": "VERIFIED",
+      "信心值": 100,
+      "人工確認": true,
+      "驗證備註": "使用者提供對應商品圖片",
+      "最後驗證時間": "2026-08-25",
+      "來源版本": "20260825-1359"
+    },
+    {
+      "商品ID": "JP0076",
+      "PhotoID": "PH0075",
+      "PHOTO_ROLE": "PRIMARY",
+      "驗證狀態": "VERIFIED",
+      "信心值": 100,
+      "人工確認": true,
+      "驗證備註": "使用者提供對應商品圖片",
+      "最後驗證時間": "2026-08-25",
+      "來源版本": "20260825-1403"
+    },
+    {
+      "商品ID": "JP0077",
+      "PhotoID": "PH0076",
+      "PHOTO_ROLE": "PRIMARY",
+      "驗證狀態": "VERIFIED",
+      "信心值": 100,
+      "人工確認": true,
+      "驗證備註": "使用者提供對應商品圖片",
+      "最後驗證時間": "2026-08-25",
+      "來源版本": "20260825-1412"
+    }
+  ]
+}

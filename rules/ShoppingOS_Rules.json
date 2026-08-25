@@ -1,0 +1,145 @@
+{
+  "specification_version": "1.0.0",
+  "database_schema_version": "7.0.0",
+  "development_principles": {
+    "DP-0": "所有商品、照片、分類、標籤與規則優先建立於唯一 Master Database。",
+    "DP-1": "新需求優先以資料表達。",
+    "DP-2": "資料不足時再以 Rules Engine 表達。",
+    "DP-3": "只有資料與規則都無法表達時才修改 Builder。",
+    "DP-4": "Builder 對 Database 僅可讀取，不可寫入。"
+  },
+  "rules": [
+    {
+      "id": 0,
+      "name": "Database First",
+      "text": "任何資料先更新 Database，再由 Builder 發布網站。"
+    },
+    {
+      "id": 1,
+      "name": "商品唯一性",
+      "text": "同一商品只存在一筆。"
+    },
+    {
+      "id": 2,
+      "name": "照片可共用",
+      "text": "一張照片可對應多個商品。"
+    },
+    {
+      "id": 3,
+      "name": "主商品制度",
+      "text": "多商品照片指定一個主商品，其餘為關聯或合併商品。"
+    },
+    {
+      "id": 4,
+      "name": "首頁唯一",
+      "text": "首頁不得重複顯示相同商品或相同照片群組。"
+    },
+    {
+      "id": 5,
+      "name": "全國商品",
+      "text": "全國普遍可買商品不加地區標籤。"
+    },
+    {
+      "id": 6,
+      "name": "地方限定",
+      "text": "只有地方性商品才加地區標籤。"
+    },
+    {
+      "id": 7,
+      "name": "購買地點",
+      "text": "每個 ACTIVE 商品至少一個購買地點。"
+    },
+    {
+      "id": 8,
+      "name": "子分類",
+      "text": "藥妝商品必須設定五大子分類之一。"
+    },
+    {
+      "id": 9,
+      "name": "照片驗證",
+      "text": "網站只使用 VERIFIED 照片。"
+    },
+    {
+      "id": 10,
+      "name": "商品生命週期",
+      "text": "使用 ACTIVE、MERGED、ARCHIVED、REMOVED。"
+    },
+    {
+      "id": 11,
+      "name": "Tag 規則",
+      "text": "Tag 分為地區、通路、屬性。"
+    },
+    {
+      "id": 12,
+      "name": "Change Log",
+      "text": "所有修改須留版本紀錄。"
+    },
+    {
+      "id": 13,
+      "name": "商品 ID 永久固定",
+      "text": "商品 ID 不得修改。"
+    },
+    {
+      "id": 14,
+      "name": "資料完整度",
+      "text": "Builder 發布前產生完整度與缺漏報告。"
+    },
+    {
+      "id": 15,
+      "name": "購買狀態",
+      "text": "未買、已買、想買、觀望、取消、停售。"
+    },
+    {
+      "id": 16,
+      "name": "Display Order",
+      "text": "每個主分類獨立排序；新增商品為分類最大值 +100；Builder 不得自行重排既有商品。"
+    },
+    {
+      "id": 17,
+      "name": "Backward Compatibility",
+      "text": "版本升級必須保留商品 ID、PhotoID、照片關聯、分類、標籤與歷史資料。"
+    }
+  ],
+  "allowed_channels": [
+    "藥妝",
+    "無印良品",
+    "超商",
+    "BIC Camera",
+    "超市",
+    "伴手禮店",
+    "Outlet",
+    "北海道大學"
+  ],
+  "subcategories": {
+    "藥妝": [
+      "保健",
+      "保養",
+      "彩妝",
+      "口腔",
+      "醫藥"
+    ]
+  },
+  "purchase_statuses": [
+    "未買",
+    "已買",
+    "想買",
+    "觀望",
+    "取消",
+    "停售"
+  ],
+  "lifecycle_statuses": [
+    "ACTIVE",
+    "MERGED",
+    "ARCHIVED",
+    "REMOVED"
+  ],
+  "photo_publish_status": [
+    "VERIFIED"
+  ],
+  "display_order": {
+    "scope": "primary_channel",
+    "default_increment": 100,
+    "manual_first": true,
+    "builder_may_reorder_existing": false
+  }
+}

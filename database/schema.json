@@ -1,0 +1,100 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Shopping OS Product Schema v7",
+  "type": "object",
+  "required": [
+    "商品ID",
+    "中文名稱",
+    "哪裡買",
+    "display_order",
+    "lifecycle_status",
+    "purchase_status"
+  ],
+  "properties": {
+    "商品ID": {
+      "type": "string",
+      "pattern": "^JP\\d{4}$"
+    },
+    "中文名稱": {
+      "type": "string",
+      "minLength": 1
+    },
+    "日文名稱": {
+      "type": "string"
+    },
+    "品牌": {
+      "type": "string"
+    },
+    "主分類": {
+      "type": "string"
+    },
+    "子分類": {
+      "type": "string"
+    },
+    "哪裡買": {
+      "type": "array",
+      "items": {
+        "enum": [
+          "藥妝",
+          "無印良品",
+          "超商",
+          "BIC Camera",
+          "超市",
+          "伴手禮店",
+          "Outlet",
+          "北海道大學"
+        ]
+      },
+      "minItems": 1
+    },
+    "region_tags": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "attribute_tags": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "channel_tags": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "display_order": {
+      "type": [
+        "integer",
+        "null"
+      ],
+      "minimum": 0
+    },
+    "lifecycle_status": {
+      "enum": [
+        "ACTIVE",
+        "MERGED",
+        "ARCHIVED",
+        "REMOVED"
+      ]
+    },
+    "purchase_status": {
+      "enum": [
+        "未買",
+        "已買",
+        "想買",
+        "觀望",
+        "取消",
+        "停售"
+      ]
+    },
+    "is_visible": {
+      "type": "boolean"
+    },
+    "merged_into": {
+      "type": "string"
+    }
+  }
+}

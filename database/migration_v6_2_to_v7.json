@@ -1,0 +1,32 @@
+{
+  "from": "6.2.0",
+  "to": "7.0.0",
+  "mode": "backward-compatible migration",
+  "preserved": [
+    "商品 ID",
+    "PhotoID",
+    "照片檔案",
+    "照片關聯",
+    "分類",
+    "子分類",
+    "購買通路",
+    "地區標籤",
+    "合併與隱藏關係"
+  ],
+  "added": [
+    "display_order",
+    "primary_channel",
+    "region_tags",
+    "attribute_tags",
+    "channel_tags",
+    "lifecycle_status",
+    "purchase_status",
+    "is_visible",
+    "schema.json",
+    "Rules Engine",
+    "Preflight Check",
+    "Builder",
+    "Website output"
+  ],
+  "product_count": 72
+}

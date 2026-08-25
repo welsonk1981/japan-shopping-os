@@ -1,0 +1,106 @@
+{
+  "schema_version": "7.2.0",
+  "changes": [
+    {
+      "date": "2026-08-03",
+      "action": "ADD_PRODUCTS_AND_PHOTOS",
+      "details": "新增 JP0060～JP0065；更新 JP0009、JP0038、JP0050～JP0053 的正確照片；一張 GOOD NEWS 合輯圖連結四筆獨立商品。"
+    },
+    {
+      "version": "7.0.0",
+      "date": "2026-08-04",
+      "action": "MIGRATE_DATABASE_FIRST",
+      "summary": "由 v6.2 向下相容遷移至 v7 Database First 架構；保留商品 ID、照片 ID、照片關聯、分類與標籤，新增 display_order、purchase_status、lifecycle_status 與 Builder。"
+    },
+    {
+      "version": "7.1.1",
+      "date": "2026-08-04",
+      "action": "UPDATE_DISPLAY_ORDER",
+      "summary": "藥妝分類中將夜酵素 DX 置頂，並將鼻部與止鼾相關商品依序排至最前方。",
+      "affected_products": [
+        "JP0006",
+        "JP0039",
+        "JP0040",
+        "JP0045",
+        "JP0046",
+        "JP0047",
+        "JP0048",
+        "JP0049",
+        "JP0052",
+        "JP0054"
+      ]
+    },
+    {
+      "version": "7.2.0",
+      "date": "2026-08-04",
+      "action": "ADD_HOMEPAGE_VIEW_MODES",
+      "summary": "首頁新增「推薦（預設）」與「全部（依資料庫排序）」兩種檢視；推薦依 homepage_order，全部依既有分類與 display_order。",
+      "affected_products": [
+        "JP0006",
+        "JP0046",
+        "JP0045",
+        "JP0048",
+        "JP0049",
+        "JP0047",
+        "JP0039",
+        "JP0040",
+        "JP0052",
+        "JP0054",
+        "JP0058",
+        "JP0059",
+        "JP0057",
+        "JP0007"
+      ]
+    },
+    {
+      "version": "7.2.0-20260818-1025",
+      "date": "2026-08-18",
+      "action": "ADD_ALINAMIN_AND_REORDER_SLEEP_NASAL",
+      "summary": "新增兩款合利他命 NIGHT RECOVER 與使用者提供主圖；藥妝內睡眠、鼻呼吸與打鼾相關商品排序提前。",
+      "affected_products": [
+        "JP0074",
+        "JP0073",
+        "JP0010",
+        "JP0039",
+        "JP0040",
+        "JP0047",
+        "JP0048",
+        "JP0049",
+        "JP0046",
+        "JP0045",
+        "JP0052",
+        "JP0054",
+        "JP0070",
+        "JP0006"
+      ]
+    },
+    {
+      "version": "7.2.0-20260825-1359",
+      "date": "2026-08-25",
+      "action": "ADD_REFA_BEAUTECH_DRYER_SMART",
+      "summary": "新增 ReFa BEAUTECH DRYER SMART，分類至 BIC Camera／美容家電，並加入使用者提供主圖。",
+      "affected_products": [
+        "JP0075"
+      ]
+    },
+    {
+      "version": "7.2.0-20260825-1403",
+      "date": "2026-08-25",
+      "action": "ADD_DYSON_SUPERSONIC_TRAVEL_HD19_VLP",
+      "summary": "新增 Dyson Supersonic Travel Hair Dryer 陶瓷粉，分類至 BIC Camera／美容家電，加入使用者提供主圖。",
+      "affected_products": [
+        "JP0076"
+      ]
+    },
+    {
+      "version": "7.2.0-20260825-1412",
+      "date": "2026-08-25",
+      "action": "ADD_NAISHI_HELP_ARCHIVE_OLD_ABDOMINAL_FAT_ITEM",
+      "summary": "新增小林製薬 ナイシヘルプ至藥妝／保健；原 JP0072「腹部脂肪對策款」改為 ARCHIVED 並隱藏，資料保留。",
+      "affected_products": [
+        "JP0072",
+        "JP0077"
+      ]
+    }
+  ]
+}
