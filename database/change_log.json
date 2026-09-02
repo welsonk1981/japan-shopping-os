@@ -119,6 +119,16 @@
       "affected_products": [
         "JP0078"
       ]
+    },
+    {
+      "version": "7.2.0-20260902-1445",
+      "date": "2026-09-02",
+      "action": "PRONO_NAV_AND_OUTLET_HIDE",
+      "summary": "主分類新增 PRONO；PRONO 二層篩選為全部／雨衣／空調服；HOOH 與 BURTLE 作為空調服商品卡；比較入口移至空調服商品下方；Outlet 選項與內容隱藏但資料保留。",
+      "affected_products": [
+        "JP0079",
+        "JP0080"
+      ]
     }
   ]
 }

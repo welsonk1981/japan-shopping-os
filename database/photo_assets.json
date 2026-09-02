@@ -1,6 +1,6 @@
 {
   "schema_version": "7.1.0",
-  "count": 77,
+  "count": 79,
   "assets": [
     {
       "PhotoID": "PH0001",
@@ -1329,6 +1329,44 @@
       "thumbnail_height": 640,
       "thumbnail_bytes": 25474,
       "original_bytes": 61500
+    },
+    {
+      "PhotoID": "PH0078",
+      "Hash": "6b4bd4721e9f",
+      "檔名": "hooh_sv900_selfdraw.webp",
+      "路徑": "images/guides/hooh_sv900_selfdraw.webp",
+      "格式": "webp",
+      "寬度": 512,
+      "高度": 950,
+      "圖片類型": "自製辨識圖／HOOH SV900",
+      "來源": "Shopping OS 自製辨識圖",
+      "來源標記": "AI 生成通用辨識線稿，非官方商品攝影",
+      "狀態": "ACTIVE",
+      "original_path": "images/guides/hooh_sv900_selfdraw.webp",
+      "thumbnail_path": "images/guides/hooh_sv900_selfdraw.webp",
+      "thumbnail_width": 512,
+      "thumbnail_height": 950,
+      "thumbnail_bytes": 60280,
+      "original_bytes": 60280
+    },
+    {
+      "PhotoID": "PH0079",
+      "Hash": "45f6edaa665e",
+      "檔名": "burtle_ac10_selfdraw.webp",
+      "路徑": "images/guides/burtle_ac10_selfdraw.webp",
+      "格式": "webp",
+      "寬度": 512,
+      "高度": 950,
+      "圖片類型": "自製辨識圖／BURTLE AC10",
+      "來源": "Shopping OS 自製辨識圖",
+      "來源標記": "AI 生成通用辨識線稿，非官方商品攝影",
+      "狀態": "ACTIVE",
+      "original_path": "images/guides/burtle_ac10_selfdraw.webp",
+      "thumbnail_path": "images/guides/burtle_ac10_selfdraw.webp",
+      "thumbnail_width": 512,
+      "thumbnail_height": 950,
+      "thumbnail_bytes": 65028,
+      "original_bytes": 65028
     }
   ],
   "performance_profile": {

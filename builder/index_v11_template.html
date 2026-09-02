@@ -303,7 +303,7 @@ header h1{
 
 
 <style id="shoppingGuideHomeStyles">
-.guide-home{max-width:1180px;margin:12px auto 0;padding:0 12px}.guide-home-title{font-size:15px;font-weight:800;color:#28483b;margin:0 0 8px}.guide-home-card{display:flex;align-items:center;justify-content:space-between;gap:10px;background:#fff;border:1px solid #dbe3de;border-radius:16px;padding:13px 14px;text-decoration:none;color:#17202a;box-shadow:0 1px 4px rgba(23,32,42,.05)}.guide-home-card span{font-weight:800}.guide-home-card b{font-size:13px;color:#315f4c;white-space:nowrap}@media(max-width:640px){.guide-home-title{font-size:16px}.guide-home-card{padding:12px}}
+.guide-home{max-width:1180px;margin:-16px auto 28px;padding:0 12px}.guide-home-card{display:flex;align-items:center;justify-content:space-between;gap:12px;background:#f2f6f3;border:1px solid #cfdcd3;border-radius:16px;padding:12px 14px;text-decoration:none;color:#17202a}.guide-home-card span{display:flex;flex-direction:column;gap:3px}.guide-home-card strong{font-size:14px}.guide-home-card small{font-size:11px;color:#69736d}.guide-home-card b{font-size:13px;color:#315f4c;white-space:nowrap}@media(max-width:640px){.guide-home{margin:-18px auto 24px;padding:0 10px}.guide-home-card{padding:11px 12px}.guide-home-card strong{font-size:14px}}
 </style>
 
 </head><body>
@@ -312,11 +312,14 @@ header h1{
   <p class="header-subtitle">日本採買系統</p>
   <p class="meta">{{META}}</p>
 </header>
-<section class="toolbar"><div class="search-wrap"><input id="search" class="search" placeholder="搜尋商品…"></div><div class="filter-section-title">商品分類</div><nav class="filters"><button class="main-filter active" data-filter="全部">全部</button><button class="main-filter " data-filter="藥妝">藥妝</button><button class="main-filter " data-filter="無印良品">無印良品</button><button class="main-filter " data-filter="超商">超商</button><button class="main-filter " data-filter="BIC Camera">BIC Camera</button><button class="main-filter " data-filter="超市">超市</button><button class="main-filter " data-filter="伴手禮店">伴手禮店</button><button class="main-filter " data-filter="Outlet">Outlet</button><button class="main-filter " data-filter="北海道大學">北海道大學</button></nav></section>
-<section id="subpanel" class="subpanel"><nav class="filters"><button class="sub-filter subactive" data-subfilter="全部藥妝">全部藥妝</button><button class="sub-filter " data-subfilter="保健">保健</button><button class="sub-filter " data-subfilter="保養">保養</button><button class="sub-filter " data-subfilter="彩妝">彩妝</button><button class="sub-filter " data-subfilter="口腔">口腔</button><button class="sub-filter " data-subfilter="醫藥">醫藥</button></nav></section>
+<section class="toolbar"><div class="search-wrap"><input id="search" class="search" placeholder="搜尋商品…"></div><div class="filter-section-title">商品分類</div><nav class="filters"><button class="main-filter active" data-filter="全部">全部</button><button class="main-filter" data-filter="藥妝">藥妝</button><button class="main-filter" data-filter="無印良品">無印良品</button><button class="main-filter" data-filter="超商">超商</button><button class="main-filter" data-filter="BIC Camera">BIC Camera</button><button class="main-filter" data-filter="超市">超市</button><button class="main-filter" data-filter="伴手禮店">伴手禮店</button><button class="main-filter" data-filter="PRONO">PRONO</button><button class="main-filter" data-filter="北海道大學">北海道大學</button></nav></section>
+<section id="subpanel" class="subpanel"><nav class="filters">
+<button class="sub-filter drug-sub subactive" data-subfilter="全部藥妝">全部藥妝</button><button class="sub-filter drug-sub" data-subfilter="保健">保健</button><button class="sub-filter drug-sub" data-subfilter="保養">保養</button><button class="sub-filter drug-sub" data-subfilter="彩妝">彩妝</button><button class="sub-filter drug-sub" data-subfilter="口腔">口腔</button><button class="sub-filter drug-sub" data-subfilter="醫藥">醫藥</button>
+<button class="sub-filter prono-sub" data-subfilter="全部PRONO" hidden>全部</button><button class="sub-filter prono-sub" data-subfilter="雨具" hidden>🌧️ 雨衣</button><button class="sub-filter prono-sub" data-subfilter="空調服" hidden>🌬️ 空調服</button>
+</nav></section>
 
-{{GUIDES}}
 <main id="productGrid" class="grid">{{CARDS}}</main>
+{{GUIDES}}
 <script>
 const cards = [...document.querySelectorAll('#productGrid .card')];
 const mainBtns = [...document.querySelectorAll('.main-filter')];
@@ -336,6 +339,9 @@ function render() {
     if (visible && main === '藥妝' && sub !== '全部藥妝') {
       visible = card.dataset.subcategory === sub;
     }
+    if (visible && main === 'PRONO' && sub !== '全部PRONO') {
+      visible = card.dataset.subcategory === sub;
+    }
 
     if (visible && q) {
       visible = (card.dataset.search || '').toLowerCase().includes(q);
@@ -352,16 +358,19 @@ function render() {
 mainBtns.forEach(button => {
   button.addEventListener('click', () => {
     main = button.dataset.filter;
-    sub = '全部藥妝';
+    sub = main === 'PRONO' ? '全部PRONO' : '全部藥妝';
 
     mainBtns.forEach(item => item.classList.remove('active'));
     button.classList.add('active');
 
+    document.querySelectorAll('.drug-sub').forEach(x => x.hidden = main !== '藥妝');
+    document.querySelectorAll('.prono-sub').forEach(x => x.hidden = main !== 'PRONO');
     subBtns.forEach(item => item.classList.remove('subactive'));
-    const allDrugButton = document.querySelector('[data-subfilter="全部藥妝"]');
-    if (allDrugButton) allDrugButton.classList.add('subactive');
+    const allButton = document.querySelector(`[data-subfilter="${sub}"]`);
+    if (allButton) allButton.classList.add('subactive');
 
-    subpanel.classList.toggle('visible', main === '藥妝');
+    subpanel.classList.toggle('visible', main === '藥妝' || main === 'PRONO');
+    document.querySelectorAll('.prono-guide').forEach(g => g.hidden = !(main === 'PRONO' && sub === '空調服'));
     render();
   });
 });
@@ -372,6 +381,7 @@ subBtns.forEach(button => {
 
     subBtns.forEach(item => item.classList.remove('subactive'));
     button.classList.add('subactive');
+    document.querySelectorAll('.prono-guide').forEach(g => g.hidden = !(main === 'PRONO' && sub === '空調服'));
 
     render();
   });

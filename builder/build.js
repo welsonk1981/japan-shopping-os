@@ -84,7 +84,7 @@ function productCard(p) {
   </article>`;
 }
 
-const channels = rules.allowed_channels;
+const channels = rules.allowed_channels.filter(x => x !== "Outlet");
 const regionTags = [...new Set(active.flatMap(p => p.region_tags || []))].sort();
 const cards = active.map(productCard).join("");
 const optimizedCards = cards.replace(/<img /g, (match, offset) => {
@@ -126,7 +126,7 @@ search.oninput=()=>{q=search.value.trim().toLowerCase();render()};render();
 </script></body></html>`;
 
 
-const guideCardsHtml = guides.length ? `<section class="guide-home"><div class="guide-home-title">🧭 現場選購</div>${guides.map(g=>`<a class="guide-home-card" href="guides/${slug(g.guide_id)}.html"><span>${esc(g.title)}</span><b>開始比較 ›</b></a>`).join("")}</section>` : "";
+const guideCardsHtml = guides.length ? guides.map(g=>`<section class="guide-home prono-guide" data-guide-channel="PRONO" data-guide-subcategory="空調服" hidden><a class="guide-home-card" href="guides/${slug(g.guide_id)}.html"><span><strong>⚖️ 不知道選哪套？</strong><small>HOOH vs BURTLE｜${esc(g.priority_rule || "低檔安靜優先")}</small></span><b>開始現場比較 →</b></a></section>`).join("") : "";
 
 // Homepage uses the approved integrated template.
 const taiwanVersion = new Intl.DateTimeFormat("zh-TW", {
