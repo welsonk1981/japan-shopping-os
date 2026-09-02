@@ -1,11 +1,12 @@
 {
   "version": "7.2.0",
-  "generated_at": "2026-08-25T06:12:46.688Z",
+  "generated_at": "2026-09-02T06:01:07.913Z",
   "output": {
     "index": "index.html",
     "category_pages": 8,
     "region_tag_pages": 1,
-    "copied_images": 76,
+    "guide_pages": 1,
+    "copied_images": 77,
     "homepage_mode": "single_list",
     "all_order": "primary_channel + display_order",
     "performance": {
@@ -17,12 +18,12 @@
     }
   },
   "preflight": {
-    "products": 77,
-    "active_products": 75,
-    "photos": 76,
-    "mappings": 104,
+    "products": 78,
+    "active_products": 76,
+    "photos": 77,
+    "mappings": 105,
     "errors": 0,
     "warnings": 8,
-    "completeness_percent": 89.3
+    "completeness_percent": 89.5
   }
 }

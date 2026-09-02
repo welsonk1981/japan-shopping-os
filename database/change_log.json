@@ -101,6 +101,24 @@
         "JP0072",
         "JP0077"
       ]
+    },
+    {
+      "version": "7.2.0-20260902-1347",
+      "date": "2026-09-02",
+      "action": "ADD_KAJIMEIKU_7260",
+      "summary": "新增カジメイク 7260 エントラントレインコート至 PRONO／雨具；暫不綁定未能本機化驗證的圖片。",
+      "affected_products": [
+        "JP0078"
+      ]
+    },
+    {
+      "version": "7.2.0-20260902-1401",
+      "date": "2026-09-02",
+      "action": "APPLY_SELF_DRAWN_IDENTIFICATION_ART_AND_PRODUCT_LINKS",
+      "summary": "PRONO Guide 與 Kajimeiku 7260 改用 Shopping OS 自製辨識圖；HOOH、BURTLE、7260 加入資料庫驅動的外部商品頁連結，不嵌入官方商品照片。",
+      "affected_products": [
+        "JP0078"
+      ]
     }
   ]
 }

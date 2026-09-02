@@ -1,6 +1,6 @@
 {
   "schema_version": "7.1.0",
-  "count": 76,
+  "count": 77,
   "assets": [
     {
       "PhotoID": "PH0001",
@@ -1289,7 +1289,7 @@
       "thumbnail_path": "images/thumbs/PH0075_4ae79616afd6.webp",
       "thumbnail_width": 480,
       "thumbnail_height": 543,
-      "thumbnail_bytes": 4162,
+      "thumbnail_bytes": 4048,
       "original_bytes": 7306
     },
     {
@@ -1308,8 +1308,27 @@
       "thumbnail_path": "images/thumbs/PH0076_0e9447b50ed9.webp",
       "thumbnail_width": 294,
       "thumbnail_height": 640,
-      "thumbnail_bytes": 15984,
+      "thumbnail_bytes": 16252,
       "original_bytes": 78946
+    },
+    {
+      "PhotoID": "PH0077",
+      "Hash": "0ca1cdb8d17a",
+      "檔名": "PH0077_0ca1cdb8d17a.webp",
+      "路徑": "images/thumbs/PH0077_0ca1cdb8d17a.webp",
+      "格式": "webp",
+      "寬度": 512,
+      "高度": 950,
+      "圖片類型": "自製辨識圖／カジメイク 7260",
+      "來源": "Shopping OS 自製辨識圖",
+      "來源標記": "2026-09-02 AI 生成之通用辨識線稿，非官方商品攝影",
+      "狀態": "ACTIVE",
+      "original_path": "images/originals/PH0077_0ca1cdb8d17a.webp",
+      "thumbnail_path": "images/thumbs/PH0077_0ca1cdb8d17a.webp",
+      "thumbnail_width": 345,
+      "thumbnail_height": 640,
+      "thumbnail_bytes": 25474,
+      "original_bytes": 61500
     }
   ],
   "performance_profile": {

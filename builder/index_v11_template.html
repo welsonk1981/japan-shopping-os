@@ -301,6 +301,11 @@ header h1{
 }
 </style>
 
+
+<style id="shoppingGuideHomeStyles">
+.guide-home{max-width:1180px;margin:12px auto 0;padding:0 12px}.guide-home-title{font-size:15px;font-weight:800;color:#28483b;margin:0 0 8px}.guide-home-card{display:flex;align-items:center;justify-content:space-between;gap:10px;background:#fff;border:1px solid #dbe3de;border-radius:16px;padding:13px 14px;text-decoration:none;color:#17202a;box-shadow:0 1px 4px rgba(23,32,42,.05)}.guide-home-card span{font-weight:800}.guide-home-card b{font-size:13px;color:#315f4c;white-space:nowrap}@media(max-width:640px){.guide-home-title{font-size:16px}.guide-home-card{padding:12px}}
+</style>
+
 </head><body>
 <header>
   <h1>Shopping OS</h1>
@@ -310,6 +315,7 @@ header h1{
 <section class="toolbar"><div class="search-wrap"><input id="search" class="search" placeholder="搜尋商品…"></div><div class="filter-section-title">商品分類</div><nav class="filters"><button class="main-filter active" data-filter="全部">全部</button><button class="main-filter " data-filter="藥妝">藥妝</button><button class="main-filter " data-filter="無印良品">無印良品</button><button class="main-filter " data-filter="超商">超商</button><button class="main-filter " data-filter="BIC Camera">BIC Camera</button><button class="main-filter " data-filter="超市">超市</button><button class="main-filter " data-filter="伴手禮店">伴手禮店</button><button class="main-filter " data-filter="Outlet">Outlet</button><button class="main-filter " data-filter="北海道大學">北海道大學</button></nav></section>
 <section id="subpanel" class="subpanel"><nav class="filters"><button class="sub-filter subactive" data-subfilter="全部藥妝">全部藥妝</button><button class="sub-filter " data-subfilter="保健">保健</button><button class="sub-filter " data-subfilter="保養">保養</button><button class="sub-filter " data-subfilter="彩妝">彩妝</button><button class="sub-filter " data-subfilter="口腔">口腔</button><button class="sub-filter " data-subfilter="醫藥">醫藥</button></nav></section>
 
+{{GUIDES}}
 <main id="productGrid" class="grid">{{CARDS}}</main>
 <script>
 const cards = [...document.querySelectorAll('#productGrid .card')];

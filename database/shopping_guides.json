@@ -1,0 +1,71 @@
+{
+  "schema_version": "1.0.0",
+  "guides": [
+    {
+      "guide_id": "GUIDE001",
+      "title": "PRONO 空調服現場比較",
+      "category": "機能服／空調服",
+      "shopping_channel": "PRONO",
+      "status": "ACTIVE",
+      "priority_rule": "低檔安靜優先",
+      "core_principle": "先選風扇 → 確認相容 → 再選衣服",
+      "candidates": [
+        {
+          "id": "HOOH_SV900",
+          "label": "HOOH SV900",
+          "brand": "HOOH",
+          "model": "SV900",
+          "lowest_setting": "8V",
+          "airflow": "36 L/s",
+          "image_url": "https://gigaplus.makeshop.jp/darumaworks/26-fan/murakami-sv900.jpg",
+          "source_url": "https://hooh.jp/product/sv900/",
+          "image_path": "../assets/images/guides/hooh_sv900_selfdraw.webp",
+          "link_label": "查看官方商品",
+          "link_type": "official"
+        },
+        {
+          "id": "BURTLE_AC10",
+          "label": "BURTLE AC10＋AC10-1",
+          "brand": "BURTLE",
+          "model": "AC10＋AC10-1",
+          "lowest_setting": "9V",
+          "airflow": "38 L/s",
+          "image_url": "https://item-shopping.c.yimg.jp/i/n/arc-shop_ac10",
+          "source_url": "https://burtle.jp/new_arrival/ss_ac10-1-2/",
+          "image_path": "../assets/images/guides/burtle_ac10_selfdraw.webp",
+          "link_label": "查看官方商品",
+          "link_type": "official"
+        }
+      ],
+      "criteria": [
+        {
+          "id": "quiet",
+          "label": "哪套比較安靜？",
+          "weight": 4
+        },
+        {
+          "id": "sound",
+          "label": "哪套聲音比較舒服？",
+          "weight": 3
+        },
+        {
+          "id": "cooling",
+          "label": "最低檔哪套比較涼？",
+          "weight": 2
+        },
+        {
+          "id": "comfort",
+          "label": "哪套穿起來比較舒服？",
+          "weight": 2
+        },
+        {
+          "id": "weight",
+          "label": "哪套重量比較能接受？",
+          "weight": 1
+        }
+      ],
+      "compatibility_note": "BURTLE、HOOH 不混用；同品牌不同年份也先確認相容性。",
+      "updated_at": "2026-09-02"
+    }
+  ]
+}

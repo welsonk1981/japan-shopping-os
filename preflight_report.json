@@ -1,14 +1,14 @@
 {
   "passed": true,
-  "generated_at": "2026-08-25T06:12:46.646Z",
+  "generated_at": "2026-09-02T06:01:07.868Z",
   "summary": {
-    "products": 77,
-    "active_products": 75,
-    "photos": 76,
-    "mappings": 104,
+    "products": 78,
+    "active_products": 76,
+    "photos": 77,
+    "mappings": 105,
     "errors": 0,
     "warnings": 8,
-    "completeness_percent": 89.3
+    "completeness_percent": 89.5
   },
   "errors": [],
   "warnings": [
