@@ -46,6 +46,7 @@ const active = products
   .filter(p => p.lifecycle_status === "ACTIVE" && p.is_visible !== false && !hiddenChildIds.has(p.商品ID))
   .sort((a,b) =>
     (a.primary_channel || "").localeCompare(b.primary_channel || "", "zh-Hant") ||
+    ((a.優先順序 === "姐姐要" ? 0 : 1) - (b.優先順序 === "姐姐要" ? 0 : 1)) ||
     (a.display_order ?? 999999) - (b.display_order ?? 999999) ||
     a.商品ID.localeCompare(b.商品ID)
   );

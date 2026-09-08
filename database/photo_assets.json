@@ -1,6 +1,6 @@
 {
   "schema_version": "7.1.0",
-  "count": 80,
+  "count": 81,
   "assets": [
     {
       "PhotoID": "PH0001",
@@ -1386,6 +1386,25 @@
       "thumbnail_height": 479,
       "thumbnail_bytes": 22808,
       "original_bytes": 33034
+    },
+    {
+      "PhotoID": "PH0081",
+      "Hash": "d0135268e57b",
+      "檔名": "PH0081_d0135268e57b.webp",
+      "路徑": "images/thumbs/PH0081_d0135268e57b.webp",
+      "格式": "webp",
+      "寬度": 634,
+      "高度": 595,
+      "圖片類型": "使用者提供商品圖／休足時間 ツボ刺激ジェルシート",
+      "來源": "使用者提供",
+      "來源標記": "2026-09-08 上傳商品圖",
+      "狀態": "ACTIVE",
+      "original_path": "images/originals/PH0081_d0135268e57b.webp",
+      "thumbnail_path": "images/thumbs/PH0081_d0135268e57b.webp",
+      "thumbnail_width": 634,
+      "thumbnail_height": 595,
+      "thumbnail_bytes": 68958,
+      "original_bytes": 103522
     }
   ],
   "performance_profile": {

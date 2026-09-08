@@ -138,6 +138,15 @@
       "affected_products": [
         "JP0081"
       ]
+    },
+    {
+      "version": "7.2.0-20260908-1142",
+      "date": "2026-09-08",
+      "action": "ADD_KYUSOKU_JIKAN_AND_SISTER_PRIORITY",
+      "summary": "新增休足時間 ツボ刺激ジェルシート（JP0082）至藥妝，標記「姐姐要」；Builder 新增同類別內「姐姐要」商品優先排序規則。",
+      "affected_products": [
+        "JP0082"
+      ]
     }
   ]
 }
