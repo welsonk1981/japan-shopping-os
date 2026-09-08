@@ -129,6 +129,15 @@
         "JP0079",
         "JP0080"
       ]
+    },
+    {
+      "version": "7.2.0-20260908-1027",
+      "date": "2026-09-08",
+      "action": "ADD_DEARNATURA_ZINC",
+      "summary": "新增 Dear-Natura 亜鉛14mg 至藥妝／保健，排於睡眠優先項目之後。",
+      "affected_products": [
+        "JP0081"
+      ]
     }
   ]
 }

@@ -1,6 +1,6 @@
 {
   "schema_version": "7.1.0",
-  "count": 79,
+  "count": 80,
   "assets": [
     {
       "PhotoID": "PH0001",
@@ -1367,6 +1367,25 @@
       "thumbnail_height": 950,
       "thumbnail_bytes": 65028,
       "original_bytes": 65028
+    },
+    {
+      "PhotoID": "PH0080",
+      "Hash": "38b1109cbaec",
+      "檔名": "PH0080_38b1109cbaec.webp",
+      "路徑": "images/thumbs/PH0080_38b1109cbaec.webp",
+      "格式": "webp",
+      "寬度": 517,
+      "高度": 479,
+      "圖片類型": "使用者提供商品圖／Dear-Natura 亜鉛14mg",
+      "來源": "使用者提供",
+      "來源標記": "2026-09-08 上傳",
+      "狀態": "ACTIVE",
+      "original_path": "images/originals/PH0080_38b1109cbaec.webp",
+      "thumbnail_path": "images/thumbs/PH0080_38b1109cbaec.webp",
+      "thumbnail_width": 517,
+      "thumbnail_height": 479,
+      "thumbnail_bytes": 22808,
+      "original_bytes": 33034
     }
   ],
   "performance_profile": {
