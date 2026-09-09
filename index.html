@@ -315,11 +315,11 @@ header h1{
 <header>
   <h1>Shopping OS</h1>
   <p class="header-subtitle">日本採買系統</p>
-  <p class="meta">版本：2026/09/09 11:13</p>
+  <p class="meta">版本：2026/09/09 13:42</p>
 </header>
 <section class="toolbar"><div class="search-wrap"><input id="search" class="search" placeholder="搜尋商品…"></div><div class="filter-section-title">商品分類</div><nav class="filters"><button class="main-filter active" data-filter="全部">全部</button><button class="main-filter" data-filter="藥妝">藥妝</button><button class="main-filter" data-filter="無印良品">無印良品</button><button class="main-filter" data-filter="超商">超商</button><button class="main-filter" data-filter="BIC Camera">BIC Camera</button><button class="main-filter" data-filter="超市">超市</button><button class="main-filter" data-filter="伴手禮店">伴手禮店</button><button class="main-filter" data-filter="PRONO">PRONO</button><button class="main-filter" data-filter="北海道大學">北海道大學</button></nav></section>
 <section id="subpanel" class="subpanel"><nav class="filters">
-<button class="sub-filter drug-sub subactive" data-subfilter="全部藥妝">全部藥妝</button><button class="sub-filter drug-sub" data-subfilter="保健">保健</button><button class="sub-filter drug-sub" data-subfilter="保養">保養</button><button class="sub-filter drug-sub" data-subfilter="彩妝">彩妝</button><button class="sub-filter drug-sub" data-subfilter="口腔">口腔</button><button class="sub-filter drug-sub" data-subfilter="醫藥">醫藥</button>
+<button class="sub-filter drug-sub subactive" data-subfilter="全部藥妝"><strong>全部藥妝</strong></button><button class="sub-filter drug-sub" data-subfilter="睡眠・疲勞｜睡眠・疲労ケア"><strong>睡眠・疲労ケア</strong><small>睡眠・疲勞</small></button><button class="sub-filter drug-sub" data-subfilter="維他命・保健｜サプリメント・健康食品"><strong>サプリメント・健康食品</strong><small>維他命・保健</small></button><button class="sub-filter drug-sub" data-subfilter="鼻・喉嚨・感冒｜鼻炎・のど・かぜ薬"><strong>鼻炎・のど・かぜ薬</strong><small>鼻・喉嚨・感冒</small></button><button class="sub-filter drug-sub" data-subfilter="口腔護理｜オーラルケア"><strong>オーラルケア</strong><small>口腔護理</small></button><button class="sub-filter drug-sub" data-subfilter="足部・痠痛｜フットケア・疲労ケア"><strong>フットケア・疲労ケア</strong><small>足部・痠痛</small></button><button class="sub-filter drug-sub" data-subfilter="臉部・身體・手部｜スキンケア・ハンドケア"><strong>スキンケア・ハンドケア</strong><small>臉部・身體・手部</small></button><button class="sub-filter drug-sub" data-subfilter="美容・護理用品｜ビューティー・ケア用品"><strong>ビューティー・ケア用品</strong><small>美容・護理用品</small></button><button class="sub-filter drug-sub" data-subfilter="生活・清潔｜日用品・洗濯用品"><strong>日用品・洗濯用品</strong><small>生活・清潔</small></button>
 <button class="sub-filter prono-sub" data-subfilter="全部PRONO" hidden>全部</button><button class="sub-filter prono-sub" data-subfilter="雨具" hidden>🌧️ 雨衣</button><button class="sub-filter prono-sub" data-subfilter="空調服" hidden>🌬️ 空調服</button>
 </nav></section>
 
@@ -1203,7 +1203,7 @@ function render() {
     let visible = main === '全部' || card.dataset.channel === main;
 
     if (visible && main === '藥妝' && sub !== '全部藥妝') {
-      visible = card.dataset.subcategory === sub;
+      visible = card.dataset.shelf === sub;
     }
     if (visible && main === 'PRONO' && sub !== '全部PRONO') {
       visible = card.dataset.subcategory === sub;
