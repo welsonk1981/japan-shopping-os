@@ -114,7 +114,18 @@ header{padding:18px 16px 12px;background:#fff;border-bottom:1px solid #ddd}h1{ma
 .toolbar{padding:12px;background:var(--panel);border-bottom:1px solid var(--border)}.filters{display:grid;grid-template-columns:repeat(auto-fit,minmax(88px,1fr));gap:8px;max-width:1180px;margin:auto}
 button,.search{border:1px solid var(--border);border-radius:14px;padding:10px 8px;background:#fff;font-size:14px;min-width:0}.active{background:var(--active);color:#fff;font-weight:700}
 .search-wrap{max-width:1180px;margin:0 auto 10px}.search{width:100%}.subpanel{display:none;padding:10px 12px;background:var(--sub);border-bottom:1px solid #e3d0bf}.subpanel.visible{display:block}.subactive{background:var(--subactive);color:#fff}
-.grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px;padding:14px 12px 30px}.drug-group-title{grid-column:1/-1;margin:10px 0 0;padding:12px 4px 6px;border-top:1px solid #d8ddd9}.drug-group-title.priority{border-top:0;margin-top:0}.drug-group-title h2{margin:0;font-size:20px;line-height:1.2}.drug-group-title h3{margin:8px 0 2px;font-size:17px;line-height:1.2}.drug-group-title .jp-shelf{font-size:12px;color:#68706c;font-weight:700}.drug-group-title .count{font-size:12px;color:#777;margin-left:6px;font-weight:600}.card{background:#fff;border:1px solid #ddd;border-radius:16px;overflow:hidden;min-width:0}.photo{aspect-ratio:1/1;padding:7px;display:flex;align-items:center;justify-content:center}.photo img{width:100%;height:100%;object-fit:contain}.missing{color:#999;font-size:12px}.body{padding:9px}h3{font-size:13px;line-height:1.35;margin:0 0 5px}.jp,.channel{font-size:10px;color:#666;margin:0 0 6px}.tags{display:flex;gap:4px;flex-wrap:wrap;margin:6px 0}.tags span{font-size:9px;padding:3px 6px;background:#eef2ee;border-radius:999px}.product-link{display:inline-flex;align-items:center;margin-top:4px;color:#315f4c;text-decoration:none;font-size:11px;font-weight:800}details{font-size:10px}
+.grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px;padding:14px 12px 30px}.drugstore-grouped-view{padding:14px 12px 30px}
+.drug-priority-section{margin:0 0 22px}
+.drug-priority-title{margin:0 0 12px;padding:0 2px}
+.drug-priority-title h2{margin:0;font-size:22px;line-height:1.2}
+.drug-priority-title h2 span{font-size:12px;color:#777;margin-left:8px;font-weight:700}
+.drug-shelf-section{margin:0 0 20px}
+.drug-shelf-title{display:flex;align-items:flex-end;justify-content:space-between;gap:12px;margin:0 0 10px;padding:0 2px 8px;border-bottom:1px solid #d9dedb}
+.drug-shelf-title h3{margin:0;font-size:17px;line-height:1.2}
+.drug-shelf-title p{margin:4px 0 0;font-size:12px;color:#68706c;font-weight:700}
+.drug-shelf-title>span{font-size:12px;color:#777;white-space:nowrap}
+.drug-shelf-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px}
+@media(min-width:780px){.drug-shelf-grid{grid-template-columns:repeat(5,minmax(0,1fr));gap:14px}.drugstore-grouped-view{padding:14px 18px 40px}}
 @media(max-width:420px){.filters{grid-template-columns:repeat(3,minmax(0,1fr))}button{font-size:12px}}
 @media(min-width:780px){.grid{grid-template-columns:repeat(5,minmax(0,1fr));gap:14px;padding:14px 18px 40px}h3{font-size:15px}}
 `;
@@ -151,41 +162,110 @@ const indexV11 = v11Template
   .replace("{{META}}", `版本：${taiwanVersion}`);
 const drugstoreGroupScript = `<script>
 (function(){
-  const grid=document.getElementById('productGrid');
-  if(!grid) return;
-  const all=[...grid.querySelectorAll('.card')];
-  const drug=all.filter(c=>(c.dataset.channel||'').includes('藥妝'));
-  if(!drug.length) return;
-  const makeTitle=(priority,zh,jp,count)=>{
-    const d=document.createElement('section');
-    d.className='drug-group-title'+(priority==='姐姐要'?' priority':'');
-    d.dataset.drugGroup='1';
-    d.innerHTML='<h2>'+(priority==='姐姐要'?'👑 姐姐要':'一般')+'<span class="count">'+count+'件</span></h2><h3>'+zh+'</h3><div class="jp-shelf">'+jp+'</div>';
-    return d;
-  };
-  function regroup(){
-    [...grid.querySelectorAll('[data-drug-group="1"]')].forEach(x=>x.remove());
-    const visible=drug.filter(c=>c.style.display!=='none');
-    const order=['姐姐要','一般'];
-    let anchor=null;
-    for(const pr of order){
-      const group=visible.filter(c=>(c.dataset.priority||'一般')===pr);
-      const shelves=[...new Set(group.map(c=>[c.dataset.shelfOrder||'9999',c.dataset.shelfZh||'',c.dataset.shelfJp||''].join('||')))]
-        .sort((a,b)=>Number(a.split('||')[0])-Number(b.split('||')[0]));
-      for(const s of shelves){
-        const [ord,zh,jp]=s.split('||');
-        const items=group.filter(c=>(c.dataset.shelfOrder||'9999')===ord);
-        if(!items.length) continue;
-        const title=makeTitle(pr,zh,jp,items.length);
-        grid.insertBefore(title,items[0]);
+  const mainGrid=document.getElementById('productGrid');
+  const subpanel=document.getElementById('subpanel');
+  if(!mainGrid) return;
+
+  const drugCards=[...mainGrid.querySelectorAll('.card')].filter(c=>(c.dataset.channel||'').includes('藥妝'));
+
+  const wrap=document.createElement('section');
+  wrap.id='drugstoreGroupedView';
+  wrap.hidden=true;
+  wrap.className='drugstore-grouped-view';
+  mainGrid.parentNode.insertBefore(wrap, mainGrid);
+
+  const priorityOrder=['姐姐要','一般'];
+
+  function shelfKey(c){
+    return [
+      c.dataset.shelfOrder||'9999',
+      c.dataset.shelfZh||'',
+      c.dataset.shelfJp||''
+    ].join('||');
+  }
+
+  function buildDrugstoreView(){
+    wrap.innerHTML='';
+    const currentSub=(typeof sub!=='undefined'?sub:'全部藥妝');
+
+    for(const priority of priorityOrder){
+      let cards=drugCards.filter(c=>(c.dataset.priority||'一般')===priority && c.style.display!=='none');
+      if(currentSub!=='全部藥妝'){
+        cards=cards.filter(c=>c.dataset.subcategory===currentSub);
       }
+      if(!cards.length) continue;
+
+      const prioritySection=document.createElement('section');
+      prioritySection.className='drug-priority-section';
+
+      const ph=document.createElement('div');
+      ph.className='drug-priority-title';
+      ph.innerHTML='<h2>'+(priority==='姐姐要'?'👑 姐姐要':'一般')+'<span>'+cards.length+'件</span></h2>';
+      prioritySection.appendChild(ph);
+
+      const shelves=[...new Set(cards.map(shelfKey))]
+        .sort((a,b)=>Number(a.split('||')[0])-Number(b.split('||')[0]));
+
+      for(const key of shelves){
+        const [order,zh,jp]=key.split('||');
+        const shelfCards=cards.filter(c=>shelfKey(c)===key);
+        if(!shelfCards.length) continue;
+
+        const shelf=document.createElement('section');
+        shelf.className='drug-shelf-section';
+
+        const sh=document.createElement('div');
+        sh.className='drug-shelf-title';
+        sh.innerHTML='<div><h3>'+zh+'</h3><p>'+jp+'</p></div><span>'+shelfCards.length+'件</span>';
+        shelf.appendChild(sh);
+
+        const grid=document.createElement('div');
+        grid.className='drug-shelf-grid';
+        shelfCards.forEach(c=>grid.appendChild(c));
+        shelf.appendChild(grid);
+        prioritySection.appendChild(shelf);
+      }
+      wrap.appendChild(prioritySection);
     }
   }
-  const originalRender=window.render;
-  if(typeof originalRender==='function'){
-    window.render=function(){originalRender();regroup();};
+
+  function showGroupedDrugstore(){
+    buildDrugstoreView();
+    mainGrid.hidden=true;
+    wrap.hidden=false;
   }
-  setTimeout(regroup,0);
+
+  function showNormalGrid(){
+    wrap.hidden=true;
+    mainGrid.hidden=false;
+    // move drug cards back to the normal grid so other filters keep working.
+    drugCards.forEach(c=>mainGrid.appendChild(c));
+  }
+
+  function syncMode(){
+    const currentMain=(typeof main!=='undefined'?main:'全部');
+    if(currentMain==='藥妝'){
+      showGroupedDrugstore();
+    }else{
+      showNormalGrid();
+    }
+  }
+
+  // Hook into existing filter buttons without changing existing behavior.
+  document.querySelectorAll('.main-filter').forEach(btn=>{
+    btn.addEventListener('click',()=>setTimeout(syncMode,0));
+  });
+  document.querySelectorAll('.sub-filter').forEach(btn=>{
+    btn.addEventListener('click',()=>setTimeout(syncMode,0));
+  });
+  const searchBox=document.getElementById('search');
+  if(searchBox){
+    searchBox.addEventListener('input',()=>{
+      if((typeof main!=='undefined'?main:'全部')==='藥妝') setTimeout(syncMode,0);
+    });
+  }
+
+  syncMode();
 })();
 </script>`;
 

@@ -310,7 +310,7 @@ header h1{
 <header>
   <h1>Shopping OS</h1>
   <p class="header-subtitle">日本採買系統</p>
-  <p class="meta">版本：2026/09/09 09:29</p>
+  <p class="meta">版本：2026/09/09 09:39</p>
 </header>
 <section class="toolbar"><div class="search-wrap"><input id="search" class="search" placeholder="搜尋商品…"></div><div class="filter-section-title">商品分類</div><nav class="filters"><button class="main-filter active" data-filter="全部">全部</button><button class="main-filter" data-filter="藥妝">藥妝</button><button class="main-filter" data-filter="無印良品">無印良品</button><button class="main-filter" data-filter="超商">超商</button><button class="main-filter" data-filter="BIC Camera">BIC Camera</button><button class="main-filter" data-filter="超市">超市</button><button class="main-filter" data-filter="伴手禮店">伴手禮店</button><button class="main-filter" data-filter="PRONO">PRONO</button><button class="main-filter" data-filter="北海道大學">北海道大學</button></nav></section>
 <section id="subpanel" class="subpanel"><nav class="filters">
@@ -1137,40 +1137,109 @@ paint();
 </script>
 <script>
 (function(){
-  const grid=document.getElementById('productGrid');
-  if(!grid) return;
-  const all=[...grid.querySelectorAll('.card')];
-  const drug=all.filter(c=>(c.dataset.channel||'').includes('藥妝'));
-  if(!drug.length) return;
-  const makeTitle=(priority,zh,jp,count)=>{
-    const d=document.createElement('section');
-    d.className='drug-group-title'+(priority==='姐姐要'?' priority':'');
-    d.dataset.drugGroup='1';
-    d.innerHTML='<h2>'+(priority==='姐姐要'?'👑 姐姐要':'一般')+'<span class="count">'+count+'件</span></h2><h3>'+zh+'</h3><div class="jp-shelf">'+jp+'</div>';
-    return d;
-  };
-  function regroup(){
-    [...grid.querySelectorAll('[data-drug-group="1"]')].forEach(x=>x.remove());
-    const visible=drug.filter(c=>c.style.display!=='none');
-    const order=['姐姐要','一般'];
-    let anchor=null;
-    for(const pr of order){
-      const group=visible.filter(c=>(c.dataset.priority||'一般')===pr);
-      const shelves=[...new Set(group.map(c=>[c.dataset.shelfOrder||'9999',c.dataset.shelfZh||'',c.dataset.shelfJp||''].join('||')))]
-        .sort((a,b)=>Number(a.split('||')[0])-Number(b.split('||')[0]));
-      for(const s of shelves){
-        const [ord,zh,jp]=s.split('||');
-        const items=group.filter(c=>(c.dataset.shelfOrder||'9999')===ord);
-        if(!items.length) continue;
-        const title=makeTitle(pr,zh,jp,items.length);
-        grid.insertBefore(title,items[0]);
+  const mainGrid=document.getElementById('productGrid');
+  const subpanel=document.getElementById('subpanel');
+  if(!mainGrid) return;
+
+  const drugCards=[...mainGrid.querySelectorAll('.card')].filter(c=>(c.dataset.channel||'').includes('藥妝'));
+
+  const wrap=document.createElement('section');
+  wrap.id='drugstoreGroupedView';
+  wrap.hidden=true;
+  wrap.className='drugstore-grouped-view';
+  mainGrid.parentNode.insertBefore(wrap, mainGrid);
+
+  const priorityOrder=['姐姐要','一般'];
+
+  function shelfKey(c){
+    return [
+      c.dataset.shelfOrder||'9999',
+      c.dataset.shelfZh||'',
+      c.dataset.shelfJp||''
+    ].join('||');
+  }
+
+  function buildDrugstoreView(){
+    wrap.innerHTML='';
+    const currentSub=(typeof sub!=='undefined'?sub:'全部藥妝');
+
+    for(const priority of priorityOrder){
+      let cards=drugCards.filter(c=>(c.dataset.priority||'一般')===priority && c.style.display!=='none');
+      if(currentSub!=='全部藥妝'){
+        cards=cards.filter(c=>c.dataset.subcategory===currentSub);
       }
+      if(!cards.length) continue;
+
+      const prioritySection=document.createElement('section');
+      prioritySection.className='drug-priority-section';
+
+      const ph=document.createElement('div');
+      ph.className='drug-priority-title';
+      ph.innerHTML='<h2>'+(priority==='姐姐要'?'👑 姐姐要':'一般')+'<span>'+cards.length+'件</span></h2>';
+      prioritySection.appendChild(ph);
+
+      const shelves=[...new Set(cards.map(shelfKey))]
+        .sort((a,b)=>Number(a.split('||')[0])-Number(b.split('||')[0]));
+
+      for(const key of shelves){
+        const [order,zh,jp]=key.split('||');
+        const shelfCards=cards.filter(c=>shelfKey(c)===key);
+        if(!shelfCards.length) continue;
+
+        const shelf=document.createElement('section');
+        shelf.className='drug-shelf-section';
+
+        const sh=document.createElement('div');
+        sh.className='drug-shelf-title';
+        sh.innerHTML='<div><h3>'+zh+'</h3><p>'+jp+'</p></div><span>'+shelfCards.length+'件</span>';
+        shelf.appendChild(sh);
+
+        const grid=document.createElement('div');
+        grid.className='drug-shelf-grid';
+        shelfCards.forEach(c=>grid.appendChild(c));
+        shelf.appendChild(grid);
+        prioritySection.appendChild(shelf);
+      }
+      wrap.appendChild(prioritySection);
     }
   }
-  const originalRender=window.render;
-  if(typeof originalRender==='function'){
-    window.render=function(){originalRender();regroup();};
+
+  function showGroupedDrugstore(){
+    buildDrugstoreView();
+    mainGrid.hidden=true;
+    wrap.hidden=false;
   }
-  setTimeout(regroup,0);
+
+  function showNormalGrid(){
+    wrap.hidden=true;
+    mainGrid.hidden=false;
+    // move drug cards back to the normal grid so other filters keep working.
+    drugCards.forEach(c=>mainGrid.appendChild(c));
+  }
+
+  function syncMode(){
+    const currentMain=(typeof main!=='undefined'?main:'全部');
+    if(currentMain==='藥妝'){
+      showGroupedDrugstore();
+    }else{
+      showNormalGrid();
+    }
+  }
+
+  // Hook into existing filter buttons without changing existing behavior.
+  document.querySelectorAll('.main-filter').forEach(btn=>{
+    btn.addEventListener('click',()=>setTimeout(syncMode,0));
+  });
+  document.querySelectorAll('.sub-filter').forEach(btn=>{
+    btn.addEventListener('click',()=>setTimeout(syncMode,0));
+  });
+  const searchBox=document.getElementById('search');
+  if(searchBox){
+    searchBox.addEventListener('input',()=>{
+      if((typeof main!=='undefined'?main:'全部')==='藥妝') setTimeout(syncMode,0);
+    });
+  }
+
+  syncMode();
 })();
 </script></body></html>
