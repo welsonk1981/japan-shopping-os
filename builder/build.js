@@ -47,19 +47,14 @@ const active = products
   .sort((a,b) => {
     const channelCmp = (a.primary_channel || "").localeCompare(b.primary_channel || "", "zh-Hant");
     if (channelCmp) return channelCmp;
-
-    // Drugstore only: 姐姐要 → 一般 → 現場貨架 → 貨架內順序.
-    // Other channels keep the existing display_order behavior.
     if ((a.primary_channel || "") === "藥妝" && (b.primary_channel || "") === "藥妝") {
-      const priorityCmp =
-        ((a.優先順序 === "姐姐要" ? 0 : 1) - (b.優先順序 === "姐姐要" ? 0 : 1));
+      const priorityCmp = ((a.優先順序 === "姐姐要" ? 0 : 1) - (b.優先順序 === "姐姐要" ? 0 : 1));
       if (priorityCmp) return priorityCmp;
       const shelfCmp = (a.現場貨架排序 ?? 999999) - (b.現場貨架排序 ?? 999999);
       if (shelfCmp) return shelfCmp;
-      const shelfItemCmp = (a.貨架內排序 ?? 999999) - (b.貨架內排序 ?? 999999);
-      if (shelfItemCmp) return shelfItemCmp;
+      const itemCmp = (a.貨架內排序 ?? 999999) - (b.貨架內排序 ?? 999999);
+      if (itemCmp) return itemCmp;
     }
-
     return (a.display_order ?? 999999) - (b.display_order ?? 999999) ||
       a.商品ID.localeCompare(b.商品ID);
   });
@@ -84,14 +79,15 @@ function productCard(p) {
   const relatedHtml = related.length
     ? `<details><summary>查看同系列</summary><ul>${related.map(x => `<li>${esc(x)}</li>`).join("")}</ul></details>`
     : "";
-  const tags = [...(p.region_tags || []), ...(p.attribute_tags || [])];
-  return `<article class="card" data-channel="${esc((p.哪裡買||[]).join("、"))}" data-subcategory="${esc(p.子分類||"")}" data-search="${esc([p.中文名稱,p.日文名稱,p.品牌,...tags].join(" "))}">
+  const tags = p.primary_channel === "藥妝"
+    ? (p.特色標籤 || []).slice(0,2)
+    : [...(p.region_tags || []), ...(p.attribute_tags || [])];
+  return `<article class="card" data-channel="${esc((p.哪裡買||[]).join("、"))}" data-subcategory="${esc(p.子分類||"")}" data-priority="${esc(p.優先順序||"一般")}" data-shelf-zh="${esc(p.現場貨架中文||"")}" data-shelf-jp="${esc(p.現場貨架日文||"")}" data-shelf-order="${esc(p.現場貨架排序??"")}" data-search="${esc([p.中文名稱,p.日文名稱,p.品牌,...tags].join(" "))}">
     <div class="photo">${img}</div>
     <div class="body">
       <h3>${esc(p.中文名稱)}</h3>
       <p class="jp">${esc(p.日文名稱||"")}</p>
-      <p class="channel">${esc((p.哪裡買||[]).join("、"))}</p>
-      ${p.primary_channel === "藥妝" && p.現場貨架 ? `<p class="shelf">${p.優先順序 === "姐姐要" ? "👑 姐姐要｜" : ""}${esc(p.現場貨架)}</p>` : ""}
+      ${p.primary_channel === "藥妝" ? "" : `<p class="channel">${esc((p.哪裡買||[]).join("、"))}</p>`}
       ${tags.length ? `<p class="tags">${tags.map(t=>`<span>${esc(t)}</span>`).join("")}</p>` : ""}
       ${p.product_url ? `<a class="product-link" href="${esc(p.product_url)}" target="_blank" rel="noopener noreferrer">${esc(p.link_label || "查看商品")} ↗</a>` : ""}
       ${relatedHtml}
@@ -105,7 +101,7 @@ const cards = active.map(productCard).join("");
 const optimizedCards = cards.replace(/<img /g, (match, offset) => {
   const before = cards.slice(0, offset);
   const index = (before.match(/<img /g) || []).length;
-  return index < 9
+  return index < 5
     ? '<img loading="eager" fetchpriority="high" '
     : '<img ';
 }).replace(/loading="lazy" loading="eager"/g, 'loading="eager"')
@@ -118,7 +114,7 @@ header{padding:18px 16px 12px;background:#fff;border-bottom:1px solid #ddd}h1{ma
 .toolbar{padding:12px;background:var(--panel);border-bottom:1px solid var(--border)}.filters{display:grid;grid-template-columns:repeat(auto-fit,minmax(88px,1fr));gap:8px;max-width:1180px;margin:auto}
 button,.search{border:1px solid var(--border);border-radius:14px;padding:10px 8px;background:#fff;font-size:14px;min-width:0}.active{background:var(--active);color:#fff;font-weight:700}
 .search-wrap{max-width:1180px;margin:0 auto 10px}.search{width:100%}.subpanel{display:none;padding:10px 12px;background:var(--sub);border-bottom:1px solid #e3d0bf}.subpanel.visible{display:block}.subactive{background:var(--subactive);color:#fff}
-.grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px;padding:14px 12px 30px}.card{background:#fff;border:1px solid #ddd;border-radius:16px;overflow:hidden;min-width:0}.photo{aspect-ratio:1/1;padding:7px;display:flex;align-items:center;justify-content:center}.photo img{width:100%;height:100%;object-fit:contain;content-visibility:auto}.missing{color:#999;font-size:12px}.body{padding:9px}h3{font-size:13px;line-height:1.35;margin:0 0 5px}.jp,.channel{font-size:10px;color:#666;margin:0 0 6px}.shelf{font-size:10px;line-height:1.4;font-weight:800;color:#315f4c;background:#eef4f0;border-radius:8px;padding:5px 7px;margin:0 0 6px}.tags{display:flex;gap:4px;flex-wrap:wrap;margin:6px 0}.tags span{font-size:9px;padding:3px 6px;background:#eef2ee;border-radius:999px}.product-link{display:inline-flex;align-items:center;margin-top:4px;color:#315f4c;text-decoration:none;font-size:11px;font-weight:800}details{font-size:10px}
+.grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px;padding:14px 12px 30px}.drug-group-title{grid-column:1/-1;margin:10px 0 0;padding:12px 4px 6px;border-top:1px solid #d8ddd9}.drug-group-title.priority{border-top:0;margin-top:0}.drug-group-title h2{margin:0;font-size:20px;line-height:1.2}.drug-group-title h3{margin:8px 0 2px;font-size:17px;line-height:1.2}.drug-group-title .jp-shelf{font-size:12px;color:#68706c;font-weight:700}.drug-group-title .count{font-size:12px;color:#777;margin-left:6px;font-weight:600}.card{background:#fff;border:1px solid #ddd;border-radius:16px;overflow:hidden;min-width:0}.photo{aspect-ratio:1/1;padding:7px;display:flex;align-items:center;justify-content:center}.photo img{width:100%;height:100%;object-fit:contain}.missing{color:#999;font-size:12px}.body{padding:9px}h3{font-size:13px;line-height:1.35;margin:0 0 5px}.jp,.channel{font-size:10px;color:#666;margin:0 0 6px}.tags{display:flex;gap:4px;flex-wrap:wrap;margin:6px 0}.tags span{font-size:9px;padding:3px 6px;background:#eef2ee;border-radius:999px}.product-link{display:inline-flex;align-items:center;margin-top:4px;color:#315f4c;text-decoration:none;font-size:11px;font-weight:800}details{font-size:10px}
 @media(max-width:420px){.filters{grid-template-columns:repeat(3,minmax(0,1fr))}button{font-size:12px}}
 @media(min-width:780px){.grid{grid-template-columns:repeat(5,minmax(0,1fr));gap:14px;padding:14px 18px 40px}h3{font-size:15px}}
 `;
@@ -153,7 +149,47 @@ const indexV11 = v11Template
   .replace("{{CARDS}}", optimizedCards)
   .replace("{{GUIDES}}", guideCardsHtml)
   .replace("{{META}}", `版本：${taiwanVersion}`);
-fs.writeFileSync(path.join(out, "index.html"), indexV11);
+const drugstoreGroupScript = `<script>
+(function(){
+  const grid=document.getElementById('productGrid');
+  if(!grid) return;
+  const all=[...grid.querySelectorAll('.card')];
+  const drug=all.filter(c=>(c.dataset.channel||'').includes('藥妝'));
+  if(!drug.length) return;
+  const makeTitle=(priority,zh,jp,count)=>{
+    const d=document.createElement('section');
+    d.className='drug-group-title'+(priority==='姐姐要'?' priority':'');
+    d.dataset.drugGroup='1';
+    d.innerHTML='<h2>'+(priority==='姐姐要'?'👑 姐姐要':'一般')+'<span class="count">'+count+'件</span></h2><h3>'+zh+'</h3><div class="jp-shelf">'+jp+'</div>';
+    return d;
+  };
+  function regroup(){
+    [...grid.querySelectorAll('[data-drug-group="1"]')].forEach(x=>x.remove());
+    const visible=drug.filter(c=>c.style.display!=='none');
+    const order=['姐姐要','一般'];
+    let anchor=null;
+    for(const pr of order){
+      const group=visible.filter(c=>(c.dataset.priority||'一般')===pr);
+      const shelves=[...new Set(group.map(c=>[c.dataset.shelfOrder||'9999',c.dataset.shelfZh||'',c.dataset.shelfJp||''].join('||')))]
+        .sort((a,b)=>Number(a.split('||')[0])-Number(b.split('||')[0]));
+      for(const s of shelves){
+        const [ord,zh,jp]=s.split('||');
+        const items=group.filter(c=>(c.dataset.shelfOrder||'9999')===ord);
+        if(!items.length) continue;
+        const title=makeTitle(pr,zh,jp,items.length);
+        grid.insertBefore(title,items[0]);
+      }
+    }
+  }
+  const originalRender=window.render;
+  if(typeof originalRender==='function'){
+    window.render=function(){originalRender();regroup();};
+  }
+  setTimeout(regroup,0);
+})();
+</script>`;
+
+fs.writeFileSync(path.join(out, "index.html"), indexV11.replace("</body>", drugstoreGroupScript + "</body>"));
 
 // Generate category pages and region tag pages.
 ensureDir(path.join(out, "categories"));
@@ -267,12 +303,12 @@ const buildReport = {
     guide_pages: guides.length,
     copied_images: assets.length,
     homepage_mode: "single_list",
-    all_order: "primary_channel; 藥妝=姐姐要/一般 + 現場貨架 + 貨架內排序; 其他=display_order",
+    all_order: "primary_channel + display_order",
     performance: {
       thumbnails: true,
       thumbnail_max_dimension: 640,
       lazy_loading: true,
-      eager_first_images: 9,
+      eager_first_images: 5,
       async_decoding: true
     }
   },

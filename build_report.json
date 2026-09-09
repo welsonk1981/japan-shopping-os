@@ -1,29 +1,29 @@
 {
   "version": "7.2.0",
-  "generated_at": "2026-09-09T00:53:34.894Z",
+  "generated_at": "2026-09-09T01:29:05.119Z",
   "output": {
     "index": "index.html",
     "category_pages": 7,
     "region_tag_pages": 1,
     "guide_pages": 1,
-    "copied_images": 80,
+    "copied_images": 81,
     "homepage_mode": "single_list",
-    "all_order": "primary_channel; 藥妝=姐姐要/一般 + 現場貨架 + 貨架內排序; 其他=display_order",
+    "all_order": "primary_channel + display_order",
     "performance": {
       "thumbnails": true,
       "thumbnail_max_dimension": 640,
       "lazy_loading": true,
-      "eager_first_images": 9,
+      "eager_first_images": 5,
       "async_decoding": true
     }
   },
   "preflight": {
     "products": 82,
     "active_products": 80,
-    "photos": 80,
-    "mappings": 108,
+    "photos": 81,
+    "mappings": 109,
     "errors": 0,
-    "warnings": 9,
-    "completeness_percent": 88.8
+    "warnings": 8,
+    "completeness_percent": 90
   }
 }
