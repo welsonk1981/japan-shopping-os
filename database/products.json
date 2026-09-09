@@ -35,8 +35,12 @@
       "merged_into": "",
       "notes": "",
       "created_at": "",
-      "updated_at": "2026-08-04",
-      "homepage_order": null
+      "updated_at": "2026-09-09",
+      "homepage_order": null,
+      "優先順序": "一般",
+      "現場貨架": "臉部・身體・手部｜スキンケア・ハンドケア",
+      "現場貨架排序": 60,
+      "貨架內排序": 1
     },
     {
       "商品ID": "JP0002",
@@ -69,8 +73,12 @@
       "merged_into": "",
       "notes": "",
       "created_at": "",
-      "updated_at": "2026-08-04",
-      "homepage_order": null
+      "updated_at": "2026-09-09",
+      "homepage_order": null,
+      "優先順序": "一般",
+      "現場貨架": "臉部・身體・手部｜スキンケア・ハンドケア",
+      "現場貨架排序": 60,
+      "貨架內排序": 2
     },
     {
       "商品ID": "JP0003",
@@ -103,8 +111,12 @@
       "merged_into": "",
       "notes": "",
       "created_at": "",
-      "updated_at": "2026-08-04",
-      "homepage_order": null
+      "updated_at": "2026-09-09",
+      "homepage_order": null,
+      "優先順序": "一般",
+      "現場貨架": "臉部・身體・手部｜スキンケア・ハンドケア",
+      "現場貨架排序": 60,
+      "貨架內排序": 3
     },
     {
       "商品ID": "JP0004",
@@ -137,8 +149,12 @@
       "merged_into": "",
       "notes": "",
       "created_at": "",
-      "updated_at": "2026-08-04",
-      "homepage_order": null
+      "updated_at": "2026-09-09",
+      "homepage_order": null,
+      "優先順序": "一般",
+      "現場貨架": "臉部・身體・手部｜スキンケア・ハンドケア",
+      "現場貨架排序": 60,
+      "貨架內排序": 4
     },
     {
       "商品ID": "JP0005",
@@ -171,8 +187,12 @@
       "merged_into": "",
       "notes": "",
       "created_at": "",
-      "updated_at": "2026-08-04",
-      "homepage_order": null
+      "updated_at": "2026-09-09",
+      "homepage_order": null,
+      "優先順序": "一般",
+      "現場貨架": "臉部・身體・手部｜スキンケア・ハンドケア",
+      "現場貨架排序": 60,
+      "貨架內排序": 5
     },
     {
       "商品ID": "JP0006",
@@ -205,8 +225,12 @@
       "merged_into": "",
       "notes": "",
       "created_at": "",
-      "updated_at": "2026-08-18",
-      "homepage_order": 10
+      "updated_at": "2026-09-09",
+      "homepage_order": 10,
+      "優先順序": "姐姐要",
+      "現場貨架": "維他命・保健｜サプリメント・健康食品",
+      "現場貨架排序": 20,
+      "貨架內排序": 1
     },
     {
       "商品ID": "JP0007",
@@ -239,8 +263,12 @@
       "merged_into": "",
       "notes": "",
       "created_at": "",
-      "updated_at": "2026-08-04",
-      "homepage_order": 140
+      "updated_at": "2026-09-09",
+      "homepage_order": 140,
+      "優先順序": "一般",
+      "現場貨架": "口腔護理｜オーラルケア",
+      "現場貨架排序": 40,
+      "貨架內排序": 1
     },
     {
       "商品ID": "JP0008",
@@ -273,8 +301,12 @@
       "merged_into": "",
       "notes": "",
       "created_at": "",
-      "updated_at": "2026-08-04",
-      "homepage_order": null
+      "updated_at": "2026-09-09",
+      "homepage_order": null,
+      "優先順序": "一般",
+      "現場貨架": "口腔護理｜オーラルケア",
+      "現場貨架排序": 40,
+      "貨架內排序": 2
     },
     {
       "商品ID": "JP0009",
@@ -307,8 +339,12 @@
       "merged_into": "",
       "notes": "",
       "created_at": "",
-      "updated_at": "2026-08-04",
-      "homepage_order": null
+      "updated_at": "2026-09-09",
+      "homepage_order": null,
+      "優先順序": "一般",
+      "現場貨架": "鼻・喉嚨・感冒｜鼻炎・のど・かぜ薬",
+      "現場貨架排序": 30,
+      "貨架內排序": 1
     },
     {
       "商品ID": "JP0010",
@@ -341,8 +377,12 @@
       "merged_into": "",
       "notes": "",
       "created_at": "",
-      "updated_at": "2026-08-18",
-      "homepage_order": null
+      "updated_at": "2026-09-09",
+      "homepage_order": null,
+      "優先順序": "一般",
+      "現場貨架": "睡眠・疲勞｜睡眠・疲労ケア",
+      "現場貨架排序": 10,
+      "貨架內排序": 3
     },
     {
       "商品ID": "JP0011",
@@ -375,8 +415,12 @@
       "merged_into": "",
       "notes": "",
       "created_at": "",
-      "updated_at": "2026-08-04",
-      "homepage_order": null
+      "updated_at": "2026-09-09",
+      "homepage_order": null,
+      "優先順序": "一般",
+      "現場貨架": "生活・清潔｜日用品・洗濯用品",
+      "現場貨架排序": 80,
+      "貨架內排序": 1
     },
     {
       "商品ID": "JP0012",
@@ -1098,8 +1142,12 @@
       "merged_into": "",
       "notes": "",
       "created_at": "",
-      "updated_at": "2026-08-04",
-      "homepage_order": null
+      "updated_at": "2026-09-09",
+      "homepage_order": null,
+      "優先順序": "一般",
+      "現場貨架": "維他命・保健｜サプリメント・健康食品",
+      "現場貨架排序": 20,
+      "貨架內排序": 2
     },
     {
       "商品ID": "JP0033",
@@ -1132,8 +1180,12 @@
       "merged_into": "",
       "notes": "",
       "created_at": "",
-      "updated_at": "2026-08-04",
-      "homepage_order": null
+      "updated_at": "2026-09-09",
+      "homepage_order": null,
+      "優先順序": "一般",
+      "現場貨架": "維他命・保健｜サプリメント・健康食品",
+      "現場貨架排序": 20,
+      "貨架內排序": 3
     },
     {
       "商品ID": "JP0034",
@@ -1200,8 +1252,12 @@
       "merged_into": "",
       "notes": "",
       "created_at": "",
-      "updated_at": "2026-08-04",
-      "homepage_order": null
+      "updated_at": "2026-09-09",
+      "homepage_order": null,
+      "優先順序": "一般",
+      "現場貨架": "臉部・身體・手部｜スキンケア・ハンドケア",
+      "現場貨架排序": 60,
+      "貨架內排序": 6
     },
     {
       "商品ID": "JP0036",
@@ -1234,8 +1290,12 @@
       "merged_into": "",
       "notes": "",
       "created_at": "",
-      "updated_at": "2026-08-04",
-      "homepage_order": null
+      "updated_at": "2026-09-09",
+      "homepage_order": null,
+      "優先順序": "一般",
+      "現場貨架": "臉部・身體・手部｜スキンケア・ハンドケア",
+      "現場貨架排序": 60,
+      "貨架內排序": 7
     },
     {
       "商品ID": "JP0037",
@@ -1268,8 +1328,12 @@
       "merged_into": "",
       "notes": "",
       "created_at": "",
-      "updated_at": "2026-08-04",
-      "homepage_order": null
+      "updated_at": "2026-09-09",
+      "homepage_order": null,
+      "優先順序": "一般",
+      "現場貨架": "臉部・身體・手部｜スキンケア・ハンドケア",
+      "現場貨架排序": 60,
+      "貨架內排序": 8
     },
     {
       "商品ID": "JP0038",
@@ -1302,8 +1366,12 @@
       "merged_into": "",
       "notes": "",
       "created_at": "",
-      "updated_at": "2026-08-04",
-      "homepage_order": null
+      "updated_at": "2026-09-09",
+      "homepage_order": null,
+      "優先順序": "一般",
+      "現場貨架": "臉部・身體・手部｜スキンケア・ハンドケア",
+      "現場貨架排序": 60,
+      "貨架內排序": 9
     },
     {
       "商品ID": "JP0039",
@@ -1336,8 +1404,12 @@
       "merged_into": "",
       "notes": "",
       "created_at": "",
-      "updated_at": "2026-08-18",
-      "homepage_order": 70
+      "updated_at": "2026-09-09",
+      "homepage_order": 70,
+      "優先順序": "一般",
+      "現場貨架": "睡眠・疲勞｜睡眠・疲労ケア",
+      "現場貨架排序": 10,
+      "貨架內排序": 4
     },
     {
       "商品ID": "JP0040",
@@ -1370,8 +1442,12 @@
       "merged_into": "",
       "notes": "",
       "created_at": "",
-      "updated_at": "2026-08-18",
-      "homepage_order": 80
+      "updated_at": "2026-09-09",
+      "homepage_order": 80,
+      "優先順序": "一般",
+      "現場貨架": "睡眠・疲勞｜睡眠・疲労ケア",
+      "現場貨架排序": 10,
+      "貨架內排序": 5
     },
     {
       "商品ID": "JP0041",
@@ -1472,8 +1548,12 @@
       "merged_into": "",
       "notes": "",
       "created_at": "",
-      "updated_at": "2026-08-04",
-      "homepage_order": null
+      "updated_at": "2026-09-09",
+      "homepage_order": null,
+      "優先順序": "一般",
+      "現場貨架": "臉部・身體・手部｜スキンケア・ハンドケア",
+      "現場貨架排序": 60,
+      "貨架內排序": 10
     },
     {
       "商品ID": "JP0044",
@@ -1506,8 +1586,12 @@
       "merged_into": "",
       "notes": "",
       "created_at": "",
-      "updated_at": "2026-08-04",
-      "homepage_order": null
+      "updated_at": "2026-09-09",
+      "homepage_order": null,
+      "優先順序": "一般",
+      "現場貨架": "臉部・身體・手部｜スキンケア・ハンドケア",
+      "現場貨架排序": 60,
+      "貨架內排序": 11
     },
     {
       "商品ID": "JP0045",
@@ -1540,8 +1624,12 @@
       "merged_into": "",
       "notes": "",
       "created_at": "",
-      "updated_at": "2026-08-18",
-      "homepage_order": 30
+      "updated_at": "2026-09-09",
+      "homepage_order": 30,
+      "優先順序": "一般",
+      "現場貨架": "鼻・喉嚨・感冒｜鼻炎・のど・かぜ薬",
+      "現場貨架排序": 30,
+      "貨架內排序": 2
     },
     {
       "商品ID": "JP0046",
@@ -1574,8 +1662,12 @@
       "merged_into": "",
       "notes": "",
       "created_at": "",
-      "updated_at": "2026-08-18",
-      "homepage_order": 20
+      "updated_at": "2026-09-09",
+      "homepage_order": 20,
+      "優先順序": "一般",
+      "現場貨架": "鼻・喉嚨・感冒｜鼻炎・のど・かぜ薬",
+      "現場貨架排序": 30,
+      "貨架內排序": 3
     },
     {
       "商品ID": "JP0047",
@@ -1608,8 +1700,12 @@
       "merged_into": "",
       "notes": "",
       "created_at": "",
-      "updated_at": "2026-08-18",
-      "homepage_order": 60
+      "updated_at": "2026-09-09",
+      "homepage_order": 60,
+      "優先順序": "一般",
+      "現場貨架": "睡眠・疲勞｜睡眠・疲労ケア",
+      "現場貨架排序": 10,
+      "貨架內排序": 6
     },
     {
       "商品ID": "JP0048",
@@ -1642,8 +1738,12 @@
       "merged_into": "",
       "notes": "",
       "created_at": "",
-      "updated_at": "2026-08-18",
-      "homepage_order": 40
+      "updated_at": "2026-09-09",
+      "homepage_order": 40,
+      "優先順序": "一般",
+      "現場貨架": "睡眠・疲勞｜睡眠・疲労ケア",
+      "現場貨架排序": 10,
+      "貨架內排序": 7
     },
     {
       "商品ID": "JP0049",
@@ -1676,8 +1776,12 @@
       "merged_into": "",
       "notes": "",
       "created_at": "",
-      "updated_at": "2026-08-18",
-      "homepage_order": 50
+      "updated_at": "2026-09-09",
+      "homepage_order": 50,
+      "優先順序": "一般",
+      "現場貨架": "睡眠・疲勞｜睡眠・疲労ケア",
+      "現場貨架排序": 10,
+      "貨架內排序": 8
     },
     {
       "商品ID": "JP0050",
@@ -1782,8 +1886,12 @@
       "merged_into": "",
       "notes": "",
       "created_at": "",
-      "updated_at": "2026-08-18",
-      "homepage_order": 90
+      "updated_at": "2026-09-09",
+      "homepage_order": 90,
+      "優先順序": "一般",
+      "現場貨架": "鼻・喉嚨・感冒｜鼻炎・のど・かぜ薬",
+      "現場貨架排序": 30,
+      "貨架內排序": 4
     },
     {
       "商品ID": "JP0053",
@@ -1816,8 +1924,12 @@
       "merged_into": "",
       "notes": "",
       "created_at": "",
-      "updated_at": "2026-08-04",
-      "homepage_order": null
+      "updated_at": "2026-09-09",
+      "homepage_order": null,
+      "優先順序": "一般",
+      "現場貨架": "鼻・喉嚨・感冒｜鼻炎・のど・かぜ薬",
+      "現場貨架排序": 30,
+      "貨架內排序": 5
     },
     {
       "商品ID": "JP0054",
@@ -1850,8 +1962,12 @@
       "merged_into": "",
       "notes": "",
       "created_at": "",
-      "updated_at": "2026-08-18",
-      "homepage_order": 100
+      "updated_at": "2026-09-09",
+      "homepage_order": 100,
+      "優先順序": "一般",
+      "現場貨架": "鼻・喉嚨・感冒｜鼻炎・のど・かぜ薬",
+      "現場貨架排序": 30,
+      "貨架內排序": 6
     },
     {
       "商品ID": "JP0055",
@@ -2112,8 +2228,12 @@
       "merged_into": "",
       "notes": "",
       "created_at": "",
-      "updated_at": "2026-08-04",
-      "homepage_order": null
+      "updated_at": "2026-09-09",
+      "homepage_order": null,
+      "優先順序": "一般",
+      "現場貨架": "足部・痠痛｜フットケア・疲労ケア",
+      "現場貨架排序": 50,
+      "貨架內排序": 1
     },
     {
       "商品ID": "JP0062",
@@ -2290,8 +2410,12 @@
       "merged_into": "",
       "notes": "",
       "created_at": "",
-      "updated_at": "2026-08-04",
-      "homepage_order": null
+      "updated_at": "2026-09-09",
+      "homepage_order": null,
+      "優先順序": "一般",
+      "現場貨架": "維他命・保健｜サプリメント・健康食品",
+      "現場貨架排序": 20,
+      "貨架內排序": 4
     },
     {
       "商品ID": "JP0067",
@@ -2324,8 +2448,12 @@
       "merged_into": "",
       "notes": "",
       "created_at": "",
-      "updated_at": "2026-08-04",
-      "homepage_order": null
+      "updated_at": "2026-09-09",
+      "homepage_order": null,
+      "優先順序": "一般",
+      "現場貨架": "美容・護理用品｜ビューティー・ケア用品",
+      "現場貨架排序": 70,
+      "貨架內排序": 1
     },
     {
       "商品ID": "JP0068",
@@ -2358,8 +2486,12 @@
       "merged_into": "",
       "notes": "",
       "created_at": "",
-      "updated_at": "2026-08-04",
-      "homepage_order": null
+      "updated_at": "2026-09-09",
+      "homepage_order": null,
+      "優先順序": "一般",
+      "現場貨架": "鼻・喉嚨・感冒｜鼻炎・のど・かぜ薬",
+      "現場貨架排序": 30,
+      "貨架內排序": 7
     },
     {
       "商品ID": "JP0069",
@@ -2392,8 +2524,12 @@
       "merged_into": "",
       "notes": "",
       "created_at": "",
-      "updated_at": "2026-08-04",
-      "homepage_order": null
+      "updated_at": "2026-09-09",
+      "homepage_order": null,
+      "優先順序": "一般",
+      "現場貨架": "維他命・保健｜サプリメント・健康食品",
+      "現場貨架排序": 20,
+      "貨架內排序": 5
     },
     {
       "商品ID": "JP0070",
@@ -2426,8 +2562,12 @@
       "merged_into": "",
       "notes": "",
       "created_at": "",
-      "updated_at": "2026-08-18",
-      "homepage_order": null
+      "updated_at": "2026-09-09",
+      "homepage_order": null,
+      "優先順序": "一般",
+      "現場貨架": "睡眠・疲勞｜睡眠・疲労ケア",
+      "現場貨架排序": 10,
+      "貨架內排序": 9
     },
     {
       "商品ID": "JP0071",
@@ -2460,8 +2600,12 @@
       "merged_into": "",
       "notes": "",
       "created_at": "",
-      "updated_at": "2026-08-04",
-      "homepage_order": null
+      "updated_at": "2026-09-09",
+      "homepage_order": null,
+      "優先順序": "一般",
+      "現場貨架": "維他命・保健｜サプリメント・健康食品",
+      "現場貨架排序": 20,
+      "貨架內排序": 6
     },
     {
       "商品ID": "JP0072",
@@ -2535,8 +2679,12 @@
       "merged_into": "",
       "notes": "160錠；15歲以上每日1次、1～2錠。",
       "created_at": "2026-08-18",
-      "updated_at": "2026-08-18",
-      "homepage_order": null
+      "updated_at": "2026-09-09",
+      "homepage_order": null,
+      "優先順序": "姐姐要",
+      "現場貨架": "睡眠・疲勞｜睡眠・疲労ケア",
+      "現場貨架排序": 10,
+      "貨架內排序": 1
     },
     {
       "商品ID": "JP0074",
@@ -2574,8 +2722,12 @@
       "merged_into": "",
       "notes": "機能性表示食品；10日份／30粒；每日3粒。",
       "created_at": "2026-08-18",
-      "updated_at": "2026-08-18",
-      "homepage_order": null
+      "updated_at": "2026-09-09",
+      "homepage_order": null,
+      "優先順序": "一般",
+      "現場貨架": "睡眠・疲勞｜睡眠・疲労ケア",
+      "現場貨架排序": 10,
+      "貨架內排序": 2
     },
     {
       "商品ID": "JP0075",
@@ -2688,8 +2840,12 @@
       "merged_into": "",
       "notes": "機能性表示食品。官方說明：適合 BMI 24以上30未滿者；黑薑來源多甲氧基黃酮被報告具有減少腹部脂肪（內臟脂肪及皮下脂肪）、並使日常活動時較易消耗脂肪的功能。",
       "created_at": "2026-08-25",
-      "updated_at": "2026-08-25",
-      "homepage_order": null
+      "updated_at": "2026-09-09",
+      "homepage_order": null,
+      "優先順序": "一般",
+      "現場貨架": "維他命・保健｜サプリメント・健康食品",
+      "現場貨架排序": 20,
+      "貨架內排序": 7
     },
     {
       "商品ID": "JP0078",
@@ -2865,8 +3021,12 @@
       "merged_into": "",
       "notes": "圖片標示：1日1粒；亜鉛14.0mg、銅0.6mg、セレン23μg，60粒／60日分。註：銅參與黑色素生成相關酵素作用；不宣稱能使白髮變黑。",
       "created_at": "2026-09-08",
-      "updated_at": "2026-09-08",
-      "homepage_order": 81
+      "updated_at": "2026-09-09",
+      "homepage_order": 81,
+      "優先順序": "一般",
+      "現場貨架": "維他命・保健｜サプリメント・健康食品",
+      "現場貨架排序": 20,
+      "貨架內排序": 8
     },
     {
       "商品ID": "JP0082",
@@ -2908,8 +3068,11 @@
       "merged_into": "",
       "notes": "【姐姐要】依使用者提供圖片新增。包裝可辨識「休足時間」「ツボ刺激ジェルシート」「足裏専用」。",
       "created_at": "2026-09-08",
-      "updated_at": "2026-09-08",
-      "homepage_order": 82
+      "updated_at": "2026-09-09",
+      "homepage_order": 82,
+      "現場貨架": "足部・痠痛｜フットケア・疲労ケア",
+      "現場貨架排序": 50,
+      "貨架內排序": 2
     }
   ]
 }

@@ -44,12 +44,25 @@ const hiddenChildIds = new Set(hiddenGroups.flatMap(g => (g.隱藏商品 || []).
 
 const active = products
   .filter(p => p.lifecycle_status === "ACTIVE" && p.is_visible !== false && !hiddenChildIds.has(p.商品ID))
-  .sort((a,b) =>
-    (a.primary_channel || "").localeCompare(b.primary_channel || "", "zh-Hant") ||
-    ((a.優先順序 === "姐姐要" ? 0 : 1) - (b.優先順序 === "姐姐要" ? 0 : 1)) ||
-    (a.display_order ?? 999999) - (b.display_order ?? 999999) ||
-    a.商品ID.localeCompare(b.商品ID)
-  );
+  .sort((a,b) => {
+    const channelCmp = (a.primary_channel || "").localeCompare(b.primary_channel || "", "zh-Hant");
+    if (channelCmp) return channelCmp;
+
+    // Drugstore only: 姐姐要 → 一般 → 現場貨架 → 貨架內順序.
+    // Other channels keep the existing display_order behavior.
+    if ((a.primary_channel || "") === "藥妝" && (b.primary_channel || "") === "藥妝") {
+      const priorityCmp =
+        ((a.優先順序 === "姐姐要" ? 0 : 1) - (b.優先順序 === "姐姐要" ? 0 : 1));
+      if (priorityCmp) return priorityCmp;
+      const shelfCmp = (a.現場貨架排序 ?? 999999) - (b.現場貨架排序 ?? 999999);
+      if (shelfCmp) return shelfCmp;
+      const shelfItemCmp = (a.貨架內排序 ?? 999999) - (b.貨架內排序 ?? 999999);
+      if (shelfItemCmp) return shelfItemCmp;
+    }
+
+    return (a.display_order ?? 999999) - (b.display_order ?? 999999) ||
+      a.商品ID.localeCompare(b.商品ID);
+  });
 
 const assetsOut = path.join(out, "assets", "images");
 fs.rmSync(path.join(out, "assets"), { recursive: true, force: true });
@@ -78,6 +91,7 @@ function productCard(p) {
       <h3>${esc(p.中文名稱)}</h3>
       <p class="jp">${esc(p.日文名稱||"")}</p>
       <p class="channel">${esc((p.哪裡買||[]).join("、"))}</p>
+      ${p.primary_channel === "藥妝" && p.現場貨架 ? `<p class="shelf">${p.優先順序 === "姐姐要" ? "👑 姐姐要｜" : ""}${esc(p.現場貨架)}</p>` : ""}
       ${tags.length ? `<p class="tags">${tags.map(t=>`<span>${esc(t)}</span>`).join("")}</p>` : ""}
       ${p.product_url ? `<a class="product-link" href="${esc(p.product_url)}" target="_blank" rel="noopener noreferrer">${esc(p.link_label || "查看商品")} ↗</a>` : ""}
       ${relatedHtml}
@@ -104,7 +118,7 @@ header{padding:18px 16px 12px;background:#fff;border-bottom:1px solid #ddd}h1{ma
 .toolbar{padding:12px;background:var(--panel);border-bottom:1px solid var(--border)}.filters{display:grid;grid-template-columns:repeat(auto-fit,minmax(88px,1fr));gap:8px;max-width:1180px;margin:auto}
 button,.search{border:1px solid var(--border);border-radius:14px;padding:10px 8px;background:#fff;font-size:14px;min-width:0}.active{background:var(--active);color:#fff;font-weight:700}
 .search-wrap{max-width:1180px;margin:0 auto 10px}.search{width:100%}.subpanel{display:none;padding:10px 12px;background:var(--sub);border-bottom:1px solid #e3d0bf}.subpanel.visible{display:block}.subactive{background:var(--subactive);color:#fff}
-.grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px;padding:14px 12px 30px}.card{background:#fff;border:1px solid #ddd;border-radius:16px;overflow:hidden;min-width:0}.photo{aspect-ratio:1/1;padding:7px;display:flex;align-items:center;justify-content:center}.photo img{width:100%;height:100%;object-fit:contain;content-visibility:auto}.missing{color:#999;font-size:12px}.body{padding:9px}h3{font-size:13px;line-height:1.35;margin:0 0 5px}.jp,.channel{font-size:10px;color:#666;margin:0 0 6px}.tags{display:flex;gap:4px;flex-wrap:wrap;margin:6px 0}.tags span{font-size:9px;padding:3px 6px;background:#eef2ee;border-radius:999px}.product-link{display:inline-flex;align-items:center;margin-top:4px;color:#315f4c;text-decoration:none;font-size:11px;font-weight:800}details{font-size:10px}
+.grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px;padding:14px 12px 30px}.card{background:#fff;border:1px solid #ddd;border-radius:16px;overflow:hidden;min-width:0}.photo{aspect-ratio:1/1;padding:7px;display:flex;align-items:center;justify-content:center}.photo img{width:100%;height:100%;object-fit:contain;content-visibility:auto}.missing{color:#999;font-size:12px}.body{padding:9px}h3{font-size:13px;line-height:1.35;margin:0 0 5px}.jp,.channel{font-size:10px;color:#666;margin:0 0 6px}.shelf{font-size:10px;line-height:1.4;font-weight:800;color:#315f4c;background:#eef4f0;border-radius:8px;padding:5px 7px;margin:0 0 6px}.tags{display:flex;gap:4px;flex-wrap:wrap;margin:6px 0}.tags span{font-size:9px;padding:3px 6px;background:#eef2ee;border-radius:999px}.product-link{display:inline-flex;align-items:center;margin-top:4px;color:#315f4c;text-decoration:none;font-size:11px;font-weight:800}details{font-size:10px}
 @media(max-width:420px){.filters{grid-template-columns:repeat(3,minmax(0,1fr))}button{font-size:12px}}
 @media(min-width:780px){.grid{grid-template-columns:repeat(5,minmax(0,1fr));gap:14px;padding:14px 18px 40px}h3{font-size:15px}}
 `;
@@ -253,7 +267,7 @@ const buildReport = {
     guide_pages: guides.length,
     copied_images: assets.length,
     homepage_mode: "single_list",
-    all_order: "primary_channel + display_order",
+    all_order: "primary_channel; 藥妝=姐姐要/一般 + 現場貨架 + 貨架內排序; 其他=display_order",
     performance: {
       thumbnails: true,
       thumbnail_max_dimension: 640,
