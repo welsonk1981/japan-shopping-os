@@ -87,7 +87,7 @@ function productCard(p) {
   const tags = p.primary_channel === "藥妝"
     ? (p.特色標籤 || []).slice(0,2)
     : [...(p.region_tags || []), ...(p.attribute_tags || [])];
-  return `<article class="card" data-channel="${esc((p.哪裡買||[]).join("、"))}" data-subcategory="${esc(p.子分類||"")}" data-search="${esc([p.中文名稱,p.日文名稱,p.品牌,...tags].join(" "))}">
+  return `<article class="card" data-channel="${esc((p.哪裡買||[]).join("、"))}" data-subcategory="${esc(p.子分類||"")}" data-shelf="${esc(p.現場貨架||"")}" data-search="${esc([p.中文名稱,p.日文名稱,p.品牌,...tags].join(" "))}">
     <div class="photo">${img}</div>
     <div class="body">
       <h3>${esc(p.中文名稱)}</h3>
@@ -133,7 +133,8 @@ button,.search{border:1px solid var(--border);border-radius:14px;padding:10px 8p
 `;
 
 const channelButtons = ["全部", ...channels].map(x => `<button class="main-filter ${x==="全部"?"active":""}" data-filter="${esc(x)}">${esc(x)}</button>`).join("");
-const subButtons = ["全部藥妝", ...rules.subcategories.藥妝].map(x => `<button class="sub-filter ${x==="全部藥妝"?"subactive":""}" data-subfilter="${esc(x)}">${esc(x)}</button>`).join("");
+const drugShelves = [["全部藥妝",""],["睡眠・疲労ケア","睡眠・疲勞"],["サプリメント・健康食品","維他命・保健"],["鼻炎・のど・かぜ薬","鼻・喉嚨・感冒"],["オーラルケア","口腔護理"],["フットケア・疲労ケア","足部・痠痛"],["スキンケア・ハンドケア","臉部・身體・手部"],["ビューティー・ケア用品","美容・護理用品"],["日用品・洗濯用品","生活・清潔"]];
+const subButtons = drugShelves.map(([jp,zh],i) => { const value=i===0?"全部藥妝":zh+"｜"+jp; return `<button class="sub-filter ${i===0?"subactive":""}" data-subfilter="${esc(value)}"><strong>${esc(jp)}</strong>${zh?`<small>${esc(zh)}</small>`:""}</button>`; }).join("");
 
 const html = `<!doctype html><html lang="zh-Hant"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Shopping OS</title><style>${css}</style></head><body>
 <header><h1>Shopping OS</h1><p class="meta">Database First v7｜${active.length} 張主卡｜資料完整度 ${report.summary.completeness_percent}%</p></header>
@@ -143,7 +144,7 @@ const html = `<!doctype html><html lang="zh-Hant"><head><meta charset="utf-8"><m
 <script>
 const productGrid=document.getElementById('productGrid'),cards=[...productGrid.querySelectorAll('.card')],mainBtns=[...document.querySelectorAll('.main-filter')],subBtns=[...document.querySelectorAll('.sub-filter')],search=document.getElementById('search'),subpanel=document.getElementById('subpanel');
 let main='全部',sub='全部藥妝',q='';
-function render(){cards.forEach(c=>{let ok=(main==='全部'||c.dataset.channel.includes(main));if(ok&&main==='藥妝'&&sub!=='全部藥妝')ok=c.dataset.subcategory===sub;if(ok&&q)ok=c.dataset.search.toLowerCase().includes(q);c.style.display=ok?'block':'none'})}
+function render(){cards.forEach(c=>{let ok=(main==='全部'||c.dataset.channel.includes(main));if(ok&&main==='藥妝'&&sub!=='全部藥妝')ok=c.dataset.shelf===sub;if(ok&&q)ok=c.dataset.search.toLowerCase().includes(q);c.style.display=ok?'block':'none'})}
 mainBtns.forEach(b=>b.onclick=()=>{main=b.dataset.filter;sub='全部藥妝';mainBtns.forEach(x=>x.classList.remove('active'));b.classList.add('active');subBtns.forEach(x=>x.classList.remove('subactive'));document.querySelector('[data-subfilter="全部藥妝"]').classList.add('subactive');subpanel.classList.toggle('visible',main==='藥妝');render()});
 subBtns.forEach(b=>b.onclick=()=>{sub=b.dataset.subfilter;subBtns.forEach(x=>x.classList.remove('subactive'));b.classList.add('subactive');render()});
 search.oninput=()=>{q=search.value.trim().toLowerCase();render()};render();

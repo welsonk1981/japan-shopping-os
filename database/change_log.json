@@ -243,6 +243,18 @@
         "JP0081",
         "JP0082"
       ]
+    },
+    {
+      "version": "7.2.0-20260909-bilingual-shelf-filter",
+      "date": "2026-09-09",
+      "action": "DRUGSTORE_SHELF_FILTER",
+      "summary": "藥妝第二層選單改為現場貨架，日文主標、中文輔助；其他UI不變。",
+      "validation": {
+        "active_drugstore": 41,
+        "shelves": 8,
+        "missing": 0,
+        "sister_priority": 3
+      }
     }
   ]
 }
