@@ -1,14 +1,14 @@
 {
   "passed": true,
-  "generated_at": "2026-09-09T00:53:34.822Z",
+  "generated_at": "2026-09-09T01:54:16.921Z",
   "summary": {
     "products": 82,
     "active_products": 80,
-    "photos": 80,
-    "mappings": 108,
+    "photos": 81,
+    "mappings": 109,
     "errors": 0,
-    "warnings": 9,
-    "completeness_percent": 88.8
+    "warnings": 8,
+    "completeness_percent": 90
   },
   "errors": [],
   "warnings": [
@@ -19,7 +19,6 @@
     "JP0031 Seicomart 巧克力可頌 沒有 VERIFIED 主圖",
     "JP0063 Itoko no Rusk 奶油脆餅 沒有 VERIFIED 主圖",
     "JP0064 Brown Cheese Brother 焦糖乳清起司夾心餅 沒有 VERIFIED 主圖",
-    "JP0065 Baked Cake 烘焙蛋糕 沒有 VERIFIED 主圖",
-    "JP0082 休足時間 穴位刺激凝膠貼 沒有 VERIFIED 主圖"
+    "JP0065 Baked Cake 烘焙蛋糕 沒有 VERIFIED 主圖"
   ]
 }
