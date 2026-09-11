@@ -255,6 +255,25 @@
         "missing": 0,
         "sister_priority": 3
       }
+    },
+    {
+      "version": "7.2.1-20260910-burtle-aircraft-bundle",
+      "date": "2026-09-10",
+      "action": "UPDATE_BURTLE_AIRCRAFT_BUNDLE",
+      "summary": "JP0080 改為 BURTLE AIRCRAFT 完整組合，PRONO→空調服排序第一並加 ⭐推薦；卡片內加入 AC2091、AC10、AC10-1 三個官方連結。其他商品與版面結構不變。",
+      "validation": {
+        "burtle_first_in_prono_airwear": true,
+        "recommend_mark": true,
+        "purchase_links": 3,
+        "protected_ui": [
+          "grid",
+          "card",
+          "photo",
+          "check",
+          "main category",
+          "RWD"
+        ]
+      }
     }
   ]
 }

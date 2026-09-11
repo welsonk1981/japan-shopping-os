@@ -3096,17 +3096,17 @@
     },
     {
       "商品ID": "JP0080",
-      "中文名稱": "BURTLE AC10＋AC10-1 空調服風扇系統",
-      "日文名稱": "BURTLE AIRCRAFT AC10＋AC10-1",
+      "中文名稱": "BURTLE AIRCRAFT 空調服完整組合",
+      "日文名稱": "BURTLE AIRCRAFT AC2091＋AC10＋AC10-1",
       "品牌": "BURTLE",
-      "系列": "空調服風扇系統",
-      "型號": "AC10＋AC10-1",
+      "系列": "AIRCRAFT",
+      "型號": "AC2091＋AC10＋AC10-1",
       "通路": "PRONO",
       "原分類": "空調服",
       "貨架分類": "空調服",
       "貨架排序": 10,
       "必買": false,
-      "推薦原因": "PRONO 現場比較候選；低檔安靜優先。",
+      "推薦原因": "⭐ 推薦｜PRONO 空調服優先比較；完整組合一次確認服裝、電池與風扇。",
       "哪裡買": [
         "PRONO"
       ],
@@ -3115,7 +3115,7 @@
       "地區標籤": [],
       "schema_version": "7.0.0",
       "primary_channel": "PRONO",
-      "display_order": 30,
+      "display_order": 10,
       "region_tags": [],
       "attribute_tags": [
         "空調服",
@@ -3130,13 +3130,31 @@
       "purchase_status": "未買",
       "is_visible": true,
       "merged_into": "",
-      "notes": "最低檔 9V、約 38 L/s。現場與 HOOH SV900 比較噪音、風量與穿著感。",
+      "notes": "完整採買組合：AC2091 服裝＋AC10 電池（官方套裝含充電器）＋AC10-1 風扇組。到 PRONO 現場建議三件裝齊後試穿走動，再與 HOOH SV900 比較低檔噪音、風量與穿著感。",
       "created_at": "2026-09-02",
-      "updated_at": "2026-09-02",
+      "updated_at": "2026-09-10",
       "homepage_order": null,
-      "product_url": "https://burtle.jp/new_arrival/ss_ac10-1-2/",
-      "link_label": "查看官方商品",
-      "link_type": "official"
+      "product_url": "https://burtle.jp/new_arrival/ss_AC2091/",
+      "link_label": "AC2091 官方頁面",
+      "link_type": "official",
+      "推薦標誌": true,
+      "購買品項": [
+        {
+          "型號": "AC2091",
+          "名稱": "服裝",
+          "url": "https://burtle.jp/new_arrival/ss_AC2091/"
+        },
+        {
+          "型號": "AC10",
+          "名稱": "電池＋充電器",
+          "url": "https://burtle.jp/new_arrival/ss_ac10/"
+        },
+        {
+          "型號": "AC10-1",
+          "名稱": "風扇組",
+          "url": "https://burtle.jp/new_arrival/ss_ac10-1-2/"
+        }
+      ]
     },
     {
       "商品ID": "JP0081",
